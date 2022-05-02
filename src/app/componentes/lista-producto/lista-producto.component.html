@@ -1,0 +1,15 @@
+<div class="row" *ngIf="nuevo">
+    <app-nuevo-producto  [prod]="nuevoProducto" (aceptarNuevo)="nuevo= !nuevo"></app-nuevo-producto>  
+  </div>
+  <div class="row" *ngIf="!nuevo">
+      <input type="button" class="btn btn-success" value="Nuevo" (click)="nuevoProd()">
+  </div>
+  <div class="row">
+  
+      <div class="col-4" *ngFor="let prod of lista" > 
+          <div >
+      
+              <app-producto [productoEntrada]="prod"  (eliminarProducto)="borrar($event)"></app-producto>
+          </div>
+           </div>
+  </div>

@@ -1,0 +1,15 @@
+<p>Adivinar el numero!</p>
+
+<input placeholder="ingrese minimo" type="number" [(ngModel)]="adivina.min">
+
+<input placeholder="ingrese maximo" type="number" [(ngModel)]="adivina.max">
+<br>
+<input class="btn-blue" type="button" (click)="adivina.jugar()" value="jugar">
+<br>
+
+
+<div>valor {{adivina.valor}}</div>
+
+<div>minimo {{adivina.min}}</div>
+
+<div>maximo {{adivina.max}}</div>
