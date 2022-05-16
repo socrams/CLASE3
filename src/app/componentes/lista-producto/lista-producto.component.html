@@ -1,5 +1,5 @@
 <div class="row" *ngIf="nuevo">
-    <app-nuevo-producto  [prod]="nuevoProducto" (aceptarNuevo)="nuevo= !nuevo"></app-nuevo-producto>  
+    <app-nuevo-producto [prod]="nuevoProducto"(aceptarNuevo)="nuevo= !nuevo"> </app-nuevo-producto>  
   </div>
   <div class="row" *ngIf="!nuevo">
       <input type="button" class="btn btn-success" value="Nuevo" (click)="nuevoProd()">

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/producto';
-import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nuevo-producto',
@@ -10,12 +9,9 @@ import { EventEmitter } from '@angular/core';
 export class NuevoProductoComponent implements 
 OnInit {
 
-  @Output()
-  public aceptarNuevo = 
-  new EventEmitter<Producto>();
+  @Output()  public aceptarNuevo = new EventEmitter<Producto>();
 
-  @Input()
-  public prod:Producto;
+  @Input() public prod:Producto;
 
   constructor() { 
     this.prod = new Producto();

@@ -12,6 +12,8 @@ import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.c
 import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivinarelnumero.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { ListaProductoComponent } from './componentes/lista-producto/lista-producto.component';
+import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-producto.component';
+import { MenuComponent } from './componentes/menu/menu.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { ListaProductoComponent } from './componentes/lista-producto/lista-produ
     AdivinarelnumeroComponent,
     ProductoComponent,
     ListaProductoComponent,
+    NuevoProductoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
