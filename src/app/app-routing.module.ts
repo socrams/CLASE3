@@ -9,6 +9,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { Adivinaelnumero } from './entidades/adivinaelnumero';
+import { AhorcadoComponent } from './juego/componentes/ahorcado/ahorcado.component';
 import { LoginModule } from './login/login.module';
 import { Producto } from './producto';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'estadisticas', component:EstadisticasComponent},
   {path: 'mijuego', component:AdivinarelnumeroComponent},
   {path: 'producto', component:Producto},
+  {path: 'ahorcado',component:AhorcadoComponent},
   {path:'**', component:BienvenidosComponent},
   
 

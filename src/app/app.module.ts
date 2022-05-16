@@ -14,6 +14,9 @@ import { ProductoComponent } from './componentes/producto/producto.component';
 import { ListaProductoComponent } from './componentes/lista-producto/lista-producto.component';
 import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-producto.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { DibujoahorcadoComponent } from './juego/componentes/dibujoahorcado/dibujoahorcado.component';
+import { AhorcadoComponent } from './juego/componentes/ahorcado/ahorcado.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +31,8 @@ import { MenuComponent } from './componentes/menu/menu.component';
     ProductoComponent,
     ListaProductoComponent,
     NuevoProductoComponent,
-    MenuComponent
+    MenuComponent,
+    DibujoahorcadoComponent,
   ],
   imports: [
     BrowserModule,
