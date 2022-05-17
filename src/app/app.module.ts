@@ -10,11 +10,12 @@ import { RegistrarseComponent } from './componentes/registrarse/registrarse.comp
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
 import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivinarelnumero.component';
-import { ProductoComponent } from './componentes/producto/producto.component';
+import { ProductoComponent } from "./componentes/producto/producto.component";
 import { ListaProductoComponent } from './componentes/lista-producto/lista-producto.component';
 import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-producto.component';
 import { MenuComponent } from './componentes/menu/menu.component';
-import { DibujoahorcadoComponent } from './juego/componentes/dibujoahorcado/dibujoahorcado.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import { DibujoahorcadoComponent } from './juego/componentes/dibujoahorcado/dibu
     EstadisticasComponent,
     AdivinarelnumeroComponent,
     ProductoComponent,
+    ProductoComponent,
     ListaProductoComponent,
     NuevoProductoComponent,
     MenuComponent,
-    DibujoahorcadoComponent,
+    AhorcadoComponent,
   ],
   imports: [
     BrowserModule,

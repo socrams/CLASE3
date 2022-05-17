@@ -12,22 +12,10 @@ export class LoginComponent implements OnInit {
 
   public usuarioGuardado:Array<Usuario>;
 
-<<<<<<< Updated upstream
   constructor(public route:Router) {
     this.miUsuario = new Usuario();
     this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
    }
-=======
-  constructor(public route:Router,) {//public fb:FormBuilder
-    this.miUsuario = new Usuario();
-    this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
-
-  //   this.form=fb.group({
-  //     'nombre':['' ,[Validators.required],[Validators.min(5)]],
-  //     'password':['',[Validators.required],]
-  //   })
-    }
->>>>>>> Stashed changes
   
   loguear(){
     
