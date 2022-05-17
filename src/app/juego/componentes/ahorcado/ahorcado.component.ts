@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Nombrepaises } from '../nombrepaises';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ahorcado',
@@ -8,19 +8,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./ahorcado.component.css']
 })
 export class AhorcadoComponent implements OnInit {
-  // misPalabras: Observable <Array<Nombrepaises>> | undefined;
-  // constructor(public bs:ServicioService) {
-  //   this.misPalabras=bs.getPalabras();
-  //  }s
+
+  
+  public espacios: Array<string>;
+  constructor() {
+    this.miAhorcado = new Nombrepaises();
+    this.miAhorcado.palabra = 'Encontrar';
+    this.espacios = this.miAhorcado.palabra.split('');
+  }
+  public miAhorcado: Nombrepaises;
+
+
 
   ngOnInit(): void {
 
-}
-
-
-// play(){}
-// iniciar(){}
-
-
+  }
 
 }
