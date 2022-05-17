@@ -11,7 +11,7 @@ export class ServicioService {
   public  url:string = 'https://restcountries.com/v3.1/all';
   public paises: Array<Nombrepaises> | undefined;
   constructor(public servicio:HttpClient) { 
-    
+
   }
 
 

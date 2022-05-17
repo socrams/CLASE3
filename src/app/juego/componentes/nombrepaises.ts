@@ -1,3 +1,7 @@
 export class Nombrepaises {
-    name: any;
+    public palabra: string = "";
+    
+    public letrasElegidas: string = "";
+    
+    public error: number = 0;
 }

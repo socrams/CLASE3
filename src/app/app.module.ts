@@ -18,7 +18,6 @@ import { DibujoahorcadoComponent } from './juego/componentes/dibujoahorcado/dibu
 import { AhorcadoComponent } from './juego/componentes/ahorcado/ahorcado.component';
 import {HttpClientModule} from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
