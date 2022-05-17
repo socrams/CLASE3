@@ -1,0 +1,20 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "Encontrar",
+        "espacios",
+        "nombre",
+        "Paises",
+        "servicio",
+        "validar"
+    ],
+    "ignoreWords": [
+        "ahorcado",
+        "contiene",
+        "letra"
+    ],
+    "import": []
+}

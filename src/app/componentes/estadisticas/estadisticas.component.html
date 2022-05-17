@@ -1,0 +1,7 @@
+<div *ngFor="let us of usuarios; let odd=odd;let index=index">
+<p [ngClass]="{'azul': odd, 'verde': !odd}">
+    
+    {{index}}
+    {{us.usuario}}
+</p>
+</div>
