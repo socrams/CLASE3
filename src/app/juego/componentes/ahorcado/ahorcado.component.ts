@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Palabras } from '../../clase/palabras';
+import { ServicioService } from '../../servicio/servicio.service';
 import { Nombrepaises } from '../nombrepaises';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ahorcado',
@@ -9,16 +11,23 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AhorcadoComponent implements OnInit {
 
+    misPalabras:Observable <Array<Palabras>> | undefined;
   
-  public espacios: Array<string>;
-  constructor() {
+    public espacios: Array<string>;
+  
+  constructor(public ss:ServicioService) {
+    
+    
+
     this.miAhorcado = new Nombrepaises();
-    this.miAhorcado.palabra = 'Encontrar';
+    this.misPalabras = ss.getPalabras();
+    this.miAhorcado.palabra = this.misPalabras;
     this.espacios = this.miAhorcado.palabra.split('');
   }
   public miAhorcado: Nombrepaises;
-
-
+  ver(){
+    console.log(this.ss.paises);
+  }
 
   ngOnInit(): void {
 

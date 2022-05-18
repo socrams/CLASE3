@@ -15,8 +15,6 @@ import { ListaProductoComponent } from './componentes/lista-producto/lista-produ
 import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-producto.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { DibujoahorcadoComponent } from './juego/componentes/dibujoahorcado/dibujoahorcado.component';
-import { AhorcadoComponent } from './juego/componentes/ahorcado/ahorcado.component';
-import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
