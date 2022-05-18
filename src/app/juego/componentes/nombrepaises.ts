@@ -1,7 +1,7 @@
 export class Nombrepaises {
   
     
-    public palabra: any | undefined;
+    public palabra: string = '';
     
     public letrasElegidas: string = '';
     
