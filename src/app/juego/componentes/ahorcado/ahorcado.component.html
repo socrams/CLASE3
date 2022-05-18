@@ -1,15 +1,16 @@
-<p>ahorcado works!</p>
+<div class="row">
+    <div class="col-12">
+        &nbsp;
+        <span *ngFor="let esp of  espacios ">
+             <span *ngIf="contiene(esp)">
+                {{esp}} &nbsp; 
+            </span>
+            <span *ngIf="!contiene(esp)">
+                _ &nbsp;
+            </span>
+        </span>
+    </div>
+</div>
+<input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra" >>
 
-<div 
-*ngFor ="let esp of espacios"> _  &nvsp </div>
- 
-
-<input type="text" .>
-<input type="submit"> 
-
-
-<!--  variables
-palabras 
- letras 
- errores dentro de ahorcado -->
-
+{{miAhorcado.letrasElegidas}}
