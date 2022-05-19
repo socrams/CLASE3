@@ -1,8 +1,5 @@
-<p>ahorcado works!</p>
 
-
-<div class="row">
-    <div class="col-12">
+    <div>
         &nbsp;
         <span *ngFor="let esp of  espacios ">
              <span *ngIf="contiene(esp)">
@@ -13,6 +10,6 @@
             </span>
         </span>
     </div>
-</div>
-<input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra">
+
+<input type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
 {{miAhorcado.letrasElegidas}}
