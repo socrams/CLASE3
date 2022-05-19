@@ -13,3 +13,13 @@
 
 <input type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
 {{miAhorcado.letrasElegidas}}
+<br>
+<!-- *ngFor="let lista of miListaPalabras; -->
+<div *ngFor="let list of miListaPalabras | async">
+    <!-- <div *ngFor="let x of list.name.common">
+        {{list.name.common[x]}}
+    </div> -->
+    {{list.name.contiene}}
+</div>
+
+

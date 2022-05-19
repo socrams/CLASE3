@@ -15,6 +15,7 @@ import { ListaProductoComponent } from './componentes/lista-producto/lista-produ
 import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-producto.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

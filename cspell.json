@@ -6,16 +6,22 @@
     "words": [
         "Adivinar",
         "Bienvenida",
+        "BOTON",
+        "clase",
+        "datos",
+        "devkit",
         "Encontrar",
         "espacios",
         "JUEGO",
         "nombre",
         "ɵɵelement",
         "Paises",
+        "profesor",
         "servicio",
         "validar"
     ],
     "ignoreWords": [
+        "Saramabarara",
         "ahorcado",
         "contiene",
         "letra"
