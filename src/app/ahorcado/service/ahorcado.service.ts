@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ListaPalabras } from '../class/lista-palabras';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+//import { Observable, Subject } from 'rxjs';
+import { Welcome } from "../ahorcado/models/responde";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,14 @@ export class AhorcadoService {
   constructor(public servicio:HttpClient) {
   }
   
-   getListaPalabras():Observable<ListaPalabras[]>{
-    //return this.servicio.get<Array<ListaPalabras>>(this.url)   
-     return this.servicio.get<ListaPalabras[]>(this.url); 
-   } 
 
+  // getListaPalabras():Observable<Array<ListaPalabras>>{
+  //   return this.servicio.get<Array<ListaPalabras>>(this.url)
+  // }   
+  getListaPalabras(){
+    return this.servicio.get<Welcome>(this.url);
+  }    
+
+  
 
 }
