@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Usuario } from 'src/app/entidades/usuario';
 
@@ -12,9 +13,14 @@ export class LoginComponent implements OnInit {
 
   public usuarioGuardado:Array<Usuario>;
 
-  constructor(public route:Router) {
+  constructor(public route:Router,public fb:FormBuilder) {
     this.miUsuario = new Usuario();
     this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
+
+    this.form=fb.group({
+      'nombre':['' ,[Validators.required],[Validators.min(5)]],
+      'password':['',[Validators.required],]
+    })
    }
   
   loguear(){
@@ -28,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
 
    }
-  
+
 
 
   ngOnInit(): void {
