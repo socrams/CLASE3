@@ -1,8 +1,8 @@
 export class Adivinaelnumero {
     public      valor:      number = 0;
     public      intentos:   number = 0;
-    public      min:        number = 0;
-    public      max:        number = 0;
+    public      min:        number= 0;
+    public      max:        number= 0;
    
 
 

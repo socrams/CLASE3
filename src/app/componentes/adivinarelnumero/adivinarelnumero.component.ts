@@ -12,21 +12,26 @@ export class AdivinarelnumeroComponent implements OnInit {
 
     adivina:Adivinaelnumero;
     intentoDelUsuario:number = 0;
+    public resultado: String = "";
+
 constructor(public route:Router) { 
       this.adivina = new Adivinaelnumero();
       let juego:Adivinaelnumero;
-    }
-
-  comparar(){2
-    if (this.intentoDelUsuario = this.adivina.valor) {
-    
-    } else {
       
     }
-    this.adivina.valor
 
+  comparar(){
+    if (this.intentoDelUsuario == this.adivina.valor) {
+      this.resultado = "acertaste, pulsa Start para jugar denuevo."  
+    } else {
+      this.resultado = "intentelo denuevo"
+      // console.log("mal")
+    }
+    // this.adivina.valor
   }
-    
+  getResultado(){
+    return this.resultado;
+  }  
   ngOnInit(): void {
 
   }
