@@ -1,0 +1,42 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "Adivinar",
+        "Bienvenida",
+        "BOTON",
+        "clase",
+        "datos",
+        "Debe",
+        "devkit",
+        "Encontrar",
+        "espacios",
+        "Guardado",
+        "imagen",
+        "ingresar",
+        "JUEGO",
+        "loguear",
+        "loqsea",
+        "mensaje",
+        "nombre",
+        "ɵɵelement",
+        "Paises",
+        "profesor",
+        "ramdom",
+        "servicio",
+        "titulo",
+        "usuario",
+        "Usuario",
+        "Usuarios",
+        "validar"
+    ],
+    "ignoreWords": [
+        "Saramabarara",
+        "ahorcado",
+        "contiene",
+        "letra"
+    ],
+    "import": []
+}
