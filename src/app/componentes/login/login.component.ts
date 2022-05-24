@@ -13,14 +13,14 @@ export class LoginComponent implements OnInit {
 
   public usuarioGuardado:Array<Usuario>;
 
-  constructor(public route:Router,public fb:FormBuilder) {
+  constructor(public route:Router,) {//public fb:FormBuilder
     this.miUsuario = new Usuario();
     this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
 
-    this.form=fb.group({
-      'nombre':['' ,[Validators.required],[Validators.min(5)]],
-      'password':['',[Validators.required],]
-    })
+    // this.form=fb.group({
+    //   'nombre':['' ,[Validators.required],[Validators.min(5)]],
+    //   'password':['',[Validators.required],]
+    // })
    }
   
   loguear(){
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     && us.pass == this.miUsuario.pass);
     
     if (usuario) {
-    this.route.navigateByUrl("estadisticas")
+    this.route.navigateByUrl("listajuegos")
     }
 
    }
