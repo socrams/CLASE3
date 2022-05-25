@@ -10,7 +10,7 @@ import { AhorcadoService } from '../service/ahorcado.service';
   templateUrl: './ahorcado.component.html',
   styleUrls: ['./ahorcado.component.css']
 })
-export class AhorcadoComponent implements OnInit {
+export class AhorcadoComponent implements OnInit  {
   public espacios: Array <string>;
   public letra: string = '';
   public mensaje:string = '';
@@ -26,12 +26,10 @@ export class AhorcadoComponent implements OnInit {
     this.espacios = this.miAhorcado.palabra.split('');
     
   } 
-  ngOnInit(): void {
-   this.palabrasService.getListaPalabras()
-       .subscribe(resp=> {
-         console.log(resp.name.common);
-       }) 
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
+  ngOnInit(): void {
+  
   }
   
   validar() {
@@ -49,11 +47,13 @@ export class AhorcadoComponent implements OnInit {
     return this.miAhorcado.letrasElegidas.toLocaleLowerCase().indexOf(pal.toLocaleLowerCase())>=0;
   }
   
-  boton () {
-      //https://www.youtube.com/watch?v=J2tN5zG0k18
-     
+  boton () {   //https://www.youtube.com/watch?v=J2tN5zG0k18
+    this.palabrasService.getListaPalabras()
+    .subscribe(resp=> {
+      console.log(resp.name.common);
+    }) 
+
   }
 
+
 }
-
-
