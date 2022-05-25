@@ -20,7 +20,10 @@ export class AhorcadoService {
   //   return this.servicio.get<Array<ListaPalabras>>(this.url)
   // }   
   getListaPalabras(){
-    return this.servicio.get<Welcome>(this.url);
+    return this.servicio.get<Welcome>(this.url)
+    .subscribe( x => {
+      x
+    })
   }    
 
   
