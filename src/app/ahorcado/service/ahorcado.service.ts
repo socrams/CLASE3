@@ -21,9 +21,9 @@ export class AhorcadoService {
   // }   
   getListaPalabras(){
     return this.servicio.get<Welcome>(this.url)
-    .subscribe( x => {
-      x
-    })
+    // .subscribe( x => {
+    //   x
+    // })
   }    
 
   
