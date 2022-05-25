@@ -27,10 +27,10 @@ export class AhorcadoComponent implements OnInit {
     
   } 
   ngOnInit(): void {
-   console.log( this.palabrasService.getListaPalabras() )
-    // .subscribe(resp=> {
-    //   console.log(resp);
-    // }) 
+   this.palabrasService.getListaPalabras()
+       .subscribe(resp=> {
+         console.log(resp.name.common);
+       }) 
 
   }
   
