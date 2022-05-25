@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+
+import { Router } from '@angular/router';
 import { Adivinaelnumero } from 'src/app/entidades/adivinaelnumero';
-import { Router,RouterLink } from '@angular/router';
-import { NumberSymbol } from '@angular/common';
+
 
 @Component({
   selector: 'app-adivinarelnumero',
   templateUrl: './adivinarelnumero.component.html',
   styleUrls: ['./adivinarelnumero.component.css']
 })
-export class AdivinarelnumeroComponent implements OnInit {
+export class AdivinarelnumeroComponent  {
 
     adivina:Adivinaelnumero;
     intentoDelUsuario:number = 0;
@@ -16,24 +17,19 @@ export class AdivinarelnumeroComponent implements OnInit {
 
 constructor(public route:Router) { 
       this.adivina = new Adivinaelnumero();
-      let juego:Adivinaelnumero;
       
     }
 
   comparar(){
     if (this.intentoDelUsuario == this.adivina.valor) {
-      this.resultado = "acertaste, pulsa Start para jugar denuevo."  
+      this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."  
+      this.adivina.intentos=0;
     } else {
-      this.resultado = "intentelo denuevo"
-      // console.log("mal")
+      this.adivina.msj = "Fallaste, intentelo denuevo."
     }
-    // this.adivina.valor
+   this.adivina.intentos++;
   }
-  getResultado(){
-    return this.resultado;
-  }  
-  ngOnInit(): void {
 
-  }
+  
 
 }

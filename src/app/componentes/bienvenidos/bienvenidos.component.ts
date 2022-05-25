@@ -19,6 +19,8 @@ export class BienvenidosComponent implements OnInit
     
   
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+    
+   }
 
 }

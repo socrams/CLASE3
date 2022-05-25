@@ -3,6 +3,7 @@ export class Adivinaelnumero {
     public      intentos:   number = 0;
     public      min:        number= 0;
     public      max:        number= 0;
+    public      msj:        string="";
    
 
 

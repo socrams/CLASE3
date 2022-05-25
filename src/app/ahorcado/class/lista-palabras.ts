@@ -1,3 +1,3 @@
 export class ListaPalabras {
-    public name:any = '';
+   public name: any = '';
 }

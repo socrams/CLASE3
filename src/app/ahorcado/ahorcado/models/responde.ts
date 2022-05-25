@@ -1,10 +1,6 @@
 export interface Welcome {
-    name:         Name;
-   
+    name: Name;
 }
-
 interface Name {
-    common:      string;
-    official:    string;
-    
+    common: string;
 }
