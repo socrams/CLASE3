@@ -1,5 +1,5 @@
 export class Ahorcado {
-    public palabra: string = "";
+    public palabra: any;
     public letrasElegidas: string = "";
     public errores: number = 0;
 

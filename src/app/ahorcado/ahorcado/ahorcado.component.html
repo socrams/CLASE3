@@ -2,7 +2,7 @@
         &nbsp;
         <span *ngFor="let esp of  espacios ">
              <span *ngIf="contiene(esp)">
-                {{esp}} &nbsp; 
+                {{esp}} &nbsp;
             </span>
             <span *ngIf="!contiene(esp)">
                 _ &nbsp;
@@ -10,7 +10,7 @@
         </span>
     </div>
 <input type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
-{{miAhorcado.letrasElegidas}} 
+{{miAhorcado.letrasElegidas}}
 <div>{{mensaje}}</div>
 <br>
 <button  type=" submit" (click)="boton()">intento</button>
@@ -18,15 +18,7 @@
 
 
 
-<!-- 
-<div *ngFor="let lista of miListaPalabras | async">
-    {{lista.name.common}}
-</div> -->
- 
 
-
-
-    
 
 
 
