@@ -19,25 +19,25 @@ export class AhorcadoComponent implements OnInit  {
 
   constructor(public palabrasService:AhorcadoService) {
     this.miAhorcado = new Ahorcado();
-    this.palabra = this.palabrasService.getListaPalabras()
-    .subscribe(resp => {
-      console.log(resp[this.x= Math.floor(Math.random()*250)].name.common);
-    });
+    //this.palabra = this.palabrasService.getListaPalabras()
+    // .subscribe(resp => {
+    //   (resp[this.x= Math.floor(Math.random()*250)].name.common);
+    // });
+    //this.palabra= this.palabrasService.getRamdomWord();
 
-    this.miAhorcado.palabra = this.palabra;
-    this.miAhorcado.palabra = this.miAhorcado.palabra.toString();
+    //this.espacios = new Array(this.palabra.length);
+
+    this.miAhorcado.palabra = 'Encontrar';
     this.espacios = this.miAhorcado.palabra.split('');
 
 
-    // this.miAhorcado = new Ahorcado();
-    // this.miListaPalabras=palabrasService.getListaPalabras();
-    // this.miAhorcado.palabra = 'Encontrar';
-    // this.espacios = this.miAhorcado.palabra.split('');
+
+
+
+
 
   }
-toArray(palabra:string):string[]{
-    return palabra.split('');
-}
+
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
 
@@ -65,12 +65,9 @@ toArray(palabra:string):string[]{
     })
 
   }
-  ngOninit(){
-  //  this.x= Math.floor(Math.random();
 
-  }
 
   getRamdomValue(){
-    this.x= Math.floor(Math.random()*250);
+    return this.x= Math.floor(Math.random()*250);
   }
 }

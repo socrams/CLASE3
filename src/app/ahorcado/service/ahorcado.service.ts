@@ -18,7 +18,11 @@ export class AhorcadoService {
     //return this.servicio.get<Welcom>(this.url)
 
   }
-
+  getRamdomWord() {
+     this.getListaPalabras().subscribe(resp => {
+       (resp[Math.floor(Math.random()*250)].name.common);
+     });
+  }
 
 
 }
