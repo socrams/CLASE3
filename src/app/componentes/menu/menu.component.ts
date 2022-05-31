@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -9,9 +8,7 @@ export class MenuComponent implements OnInit {
 
 
   constructor( ) { 
-    // this.miForm = this.fb.group ({
-    //   'nombre' : ['', [Validators.required]],
-    // })
+    
   }
 
   ngOnInit(): void {
