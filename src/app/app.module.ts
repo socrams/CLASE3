@@ -16,8 +16,6 @@ import { NuevoProductoComponent } from './componentes/nuevo-producto/nuevo-produ
 import { MenuComponent } from './componentes/menu/menu.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { HttpClientModule } from '@angular/common/http';
-import { JuegoComponent } from './tictactoe/juego/juego.component';
-import { CirculoComponent } from './tictactoe/circulo/circulo.component';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 
@@ -36,8 +34,6 @@ import { TableroComponent } from './tictactoe/tablero/tablero.component';
     NuevoProductoComponent,
     MenuComponent,
     AhorcadoComponent,
-    JuegoComponent,
-    CirculoComponent,
     CruzComponent,
     TableroComponent,
   ],

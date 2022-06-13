@@ -12,6 +12,7 @@ import { RegistrarseComponent } from './componentes/registrarse/registrarse.comp
 import { Adivinaelnumero } from './entidades/adivinaelnumero';
 import { LoginModule } from './login/login.module';
 import { Producto } from './producto';
+import { TableroComponent } from './tictactoe/tablero/tablero.component';
 // import { pathToFileURL } from 'url';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'estadisticas', component:EstadisticasComponent},
   {path: 'mijuego', component:AdivinarelnumeroComponent},
   {path: 'producto', component:Producto},
+  {path: 'tictactoe', component:TableroComponent},
   {path:'**', component:BienvenidosComponent},
   
 
