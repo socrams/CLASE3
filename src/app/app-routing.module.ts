@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { pathToFileURL } from 'url';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivinarelnumero.component';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
@@ -18,6 +20,7 @@ import { TableroComponent } from './tictactoe/tablero/tablero.component';
 const routes: Routes = [
 
   {path:'', component:MenuComponent},
+  {path: 'aboutme', component:AboutmeComponent},
   {path: 'listajuegos', component:ListaProductoComponent},
   {path: 'ahorcado', component:AhorcadoComponent},
   {path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},
