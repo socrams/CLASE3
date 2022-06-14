@@ -1,3 +1,7 @@
+
+<div>
+    <input type="button" (click)="logOut()">
+</div>
 <div class="row" *ngIf="nuevo">
     <app-nuevo-producto [prod]="nuevoProducto"(aceptarNuevo)="nuevo= !nuevo"> </app-nuevo-producto>  
   </div>

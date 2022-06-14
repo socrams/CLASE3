@@ -7,6 +7,7 @@ import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivin
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
 import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
 import { ListaProductoComponent } from './componentes/lista-producto/lista-producto.component';
+import { LoginGuardGuard } from './componentes/login-guard.guard';
 import { LoginComponent } from './componentes/login/login.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
 
   {path:'', component:MenuComponent},
   {path: 'aboutme', component:AboutmeComponent},
-  {path: 'listajuegos', component:ListaProductoComponent},
+  {path: 'listajuegos', component:ListaProductoComponent, canActivate:[LoginGuardGuard]},
   {path: 'ahorcado', component:AhorcadoComponent},
   {path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},
   {path:'registrarse', component:RegistrarseComponent},

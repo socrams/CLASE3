@@ -15,7 +15,6 @@ export class AhorcadoService {
 
   getListaPalabras(): Observable<Welcome[]>{
     return this.servicio.get<Welcome[]>(this.url);
-    //return this.servicio.get<Welcom>(this.url)
 
   }
   getRamdomWord() {

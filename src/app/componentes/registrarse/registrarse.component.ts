@@ -23,11 +23,12 @@ export class RegistrarseComponent implements OnInit{
           let listaSerializada:string =localStorage.getItem("Usuarios")??"[]";
           let ListaUsuario:Array<Usuario> = JSON.parse(listaSerializada);
           
-          if(ListaUsuario.find((us)=>us.nombre==this.miUsuario.nombre)==undefined){
-          ListaUsuario.push(this.miUsuario);
-          localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
-          this.route.navigateByUrl("login");
-        }
+          if(ListaUsuario.find((us)=>
+            us.nombre==this.miUsuario.nombre)==undefined){
+              ListaUsuario.push(this.miUsuario);
+              localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
+              this.route.navigateByUrl("login");
+              }
 
           
            /*  sessionStorage.setItem("Usuario",this.usuario);
