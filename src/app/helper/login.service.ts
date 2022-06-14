@@ -20,6 +20,10 @@ export class LoginService {
   logout(){
     this.estaLogeado = false;
     localStorage.setItem("usuarioLogeado","{}");
-  }
-  
+    window.location.reload();
+    }
+
+
 }
+  
+
