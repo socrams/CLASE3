@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterLink, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from '../helper/login.service';
 
@@ -10,10 +10,15 @@ export class LoginGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.loginService.estaLogeado;
-  }
+    
+      if(!this.loginService.estaLogeado){
+        this.router.navigateByUrl("login")        
+      }
+      // return this.loginService.estaLogeado;
+      return true;
+    }
 
-  constructor(public loginService:LoginService) {
+  constructor(public router:Router, public loginService:LoginService) {
  
     
   }
