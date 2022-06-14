@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   miUsuario:Usuario;
   public usuarioGuardado:Array<Usuario>;
   public mensajeLogin : String = "";
-  
-  
+
+
   constructor(public route:Router, public loginService:LoginService) {//public fb:FormBuilder
     this.miUsuario = new Usuario();
     this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
@@ -24,15 +24,15 @@ export class LoginComponent implements OnInit {
     //   'nombre':['' ,[Validators.required],[Validators.min(5)]],
     //   'password':['',[Validators.required],]
     // })
-   
+
   }
-  
+
   loguear(){
-    
-    let usuario:Usuario|undefined = 
+
+    let usuario:Usuario|undefined =
     this.usuarioGuardado.find((us)=>this.miUsuario.usuario==us.usuario
     && us.pass == this.miUsuario.pass);
-    
+
     if (usuario) {
       this.loginService.estaLogeado = true;
       this.loginService.logearUsuario(usuario);
@@ -50,7 +50,7 @@ loginHardCode(){
 
 
   ngOnInit(): void {
-  
+
   }
 
 }

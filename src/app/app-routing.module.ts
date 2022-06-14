@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { pathToFileURL } from 'url';
+//import { pathToFileURL } from 'url';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivinarelnumero.component';
@@ -31,7 +31,7 @@ const routes: Routes = [
   {path: 'producto', component:Producto},
   {path: 'tictactoe', component:TableroComponent},
   {path:'**', component:BienvenidosComponent},
-  
+
 
 
 ];

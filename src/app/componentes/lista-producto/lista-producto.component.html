@@ -1,19 +1,29 @@
 
-<div>
-    <input type="button" (click)="logOut()">
+<div class="row">
+  <h1>Bienvenido:</h1>
+  <h2>{{usuarioLogeado()}}</h2>
+  <input type="text" [(ngModel)]="usuarioLogeado">
+
+  </div>
+
+<div class="row-2" *ngIf="nuevo">
+    <app-nuevo-producto [prod]="nuevoProducto"(aceptarNuevo)="nuevo= !nuevo"> </app-nuevo-producto>
 </div>
-<div class="row" *ngIf="nuevo">
-    <app-nuevo-producto [prod]="nuevoProducto"(aceptarNuevo)="nuevo= !nuevo"> </app-nuevo-producto>  
+<!--  AGREGAR NUEVO JUEGOS
+<div class="row" *ngIf="!nuevo">
+    <input type="button" class="btn btn-success" value="Nuevo" (click)="nuevoProd()">
+</div>
+-->
+<div class="row">
+  <div class="row align-items-center col-4" *ngFor="let prod of lista" >
+    <div>
+      <app-producto
+        [productoEntrada]="prod" (eliminarProducto)="borrar($event)">
+      </app-producto>
+    </div>
   </div>
-  <div class="row" *ngIf="!nuevo">
-      <input type="button" class="btn btn-success" value="Nuevo" (click)="nuevoProd()">
-  </div>
-  <div class="row">
-  
-      <div class="col-4" *ngFor="let prod of lista" > 
-          <div >
-      
-              <app-producto [productoEntrada]="prod"  (eliminarProducto)="borrar($event)"></app-producto>
-          </div>
-           </div>
-  </div>
+</div>
+<br>
+<div>
+    <input class="btn btn-dark col-1" type="button" (click)="logOut()" value="LogOut" >
+</div>

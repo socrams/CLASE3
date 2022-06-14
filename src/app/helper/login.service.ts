@@ -6,15 +6,23 @@ import { Usuario } from '../entidades/usuario';
 })
 export class LoginService {
   public estaLogeado : boolean = false;
-  private usuarioLogeado: Usuario | undefined; 
-  constructor() { 
+  private usuarioLogeado: Usuario | undefined;
+  public nombreUsuario: String = "" ;
+
+
+
+
+  constructor() {
       this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
       this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
+
+
   }
 
   logearUsuario(usuario:Usuario){
     this.usuarioLogeado=usuario;
     localStorage.setItem("usuarioLogeado",JSON.stringify(usuario));
+    this.nombreUsuario=usuario.nombre;
   }
 
   logout(){
@@ -23,7 +31,10 @@ export class LoginService {
     window.location.reload();
     }
 
+  getUsuarioLogeado(){
+    return this.usuarioLogeado;
+  }
 
 }
-  
+
 
