@@ -1,10 +1,8 @@
 
+<app-menu></app-menu>
 <div class="row">
-  <h1>Bienvenido:</h1>
-  <h2>{{usuarioLogeado()}}</h2>
-  <input type="text" [(ngModel)]="usuarioLogeado">
-
-  </div>
+  <h1>Bienvenido:</h1><h2>{{usuarioLogeado()}}</h2>
+</div>
 
 <div class="row-2" *ngIf="nuevo">
     <app-nuevo-producto [prod]="nuevoProducto"(aceptarNuevo)="nuevo= !nuevo"> </app-nuevo-producto>

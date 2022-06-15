@@ -18,6 +18,7 @@ import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
+import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TableroComponent } from './tictactoe/tablero/tablero.component';
     AhorcadoComponent,
     CruzComponent,
     TableroComponent,
+    CabezeraComponent,
   ],
   imports: [
     BrowserModule,

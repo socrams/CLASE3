@@ -15,8 +15,6 @@ export class LoginService {
   constructor() {
       this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
       this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
-
-
   }
 
   logearUsuario(usuario:Usuario){
@@ -29,10 +27,10 @@ export class LoginService {
     this.estaLogeado = false;
     localStorage.setItem("usuarioLogeado","{}");
     window.location.reload();
-    }
+  }
 
   getUsuarioLogeado(){
-    return this.usuarioLogeado;
+    return this.usuarioLogeado?.nombre;
   }
 
 }
