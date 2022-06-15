@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "beltran-oggioni",
-    "public": "public",
+    "public": "dist/CLASE3",
     "ignore": [
       "firebase.json",
       "**/.*",
