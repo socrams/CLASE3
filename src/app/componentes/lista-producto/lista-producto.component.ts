@@ -35,9 +35,9 @@ export class ListaProductoComponent implements OnInit {
     this.lista= this.lista.filter( t=> t.titulo != p.titulo );
   }
 
-  logOut(){
-    this.loginService.logout();
-  }
+  // logOut(){
+  //   this.loginService.logout();
+  // }
 
   nuevoProd(){
     this.nuevo = true;

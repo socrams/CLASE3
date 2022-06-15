@@ -8,9 +8,15 @@ import { LoginService } from 'src/app/helper/login.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  stadoLogin: boolean = false;
 
   constructor(public loginService: LoginService ) {
-    let x = this.loginService.estaLogeado;
+    this.stadoLogin = loginService.getEstaLogeado();
+  }
+
+
+  logOut(){
+    this.loginService.logout();
   }
 
   ngOnInit(): void {

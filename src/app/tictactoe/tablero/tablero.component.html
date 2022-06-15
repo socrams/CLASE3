@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <h1>Current Player: {{ Player }} </h1>
 
 <button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
@@ -10,9 +11,9 @@
 
 <main>
     <app-cruz
-        *ngFor="let val of squares; let i = index" 
+        *ngFor="let val of squares; let i = index"
         [value]="val"
         (click)="makeMove(i)"
     > </app-cruz>
-    
+
 </main>

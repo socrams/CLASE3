@@ -5,7 +5,7 @@ import { Usuario } from '../entidades/usuario';
   providedIn: 'root'
 })
 export class LoginService {
-  public estaLogeado : boolean = false;
+  public estaLogeado : boolean;
   private usuarioLogeado: Usuario | undefined;
   public nombreUsuario: String = "" ;
 
@@ -31,6 +31,10 @@ export class LoginService {
 
   getUsuarioLogeado(){
     return this.usuarioLogeado?.nombre;
+  }
+
+  getEstaLogeado(){
+    return this.estaLogeado;
   }
 
 }
