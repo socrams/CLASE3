@@ -18,8 +18,8 @@
       </form> -->
 
       <div class="text-end">
-        <input type="button" class="btn btn-outline-light me-2" routerLink="login" *ngIf = !stadoLogin value="Login">
-        <input type="button" class="btn btn-warning"  routerLink="registrarse" *ngIf = !stadoLogin value="Registro">
+        <input type="button" class="btn btn-outline-light me-2" routerLink="Login" *ngIf = !stadoLogin value="Login">
+        <input type="button" class="btn btn-warning"  routerLink="Registrarse" *ngIf = !stadoLogin value="Registro">
         <input type="button" class="btn btn-warning" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
       </div>
     </div>
