@@ -6,14 +6,13 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a routerLink="" class="nav-link px-2 text-secondary">Home</a></li>
-        <!-- <li><a routerLink="aboutme" class="nav-link px-2 text-white"></a></li> -->
+        <li><a href="" class="nav-link px-2 text-secondary">Home</a></li>
         <li><a href="listajuegos" class="nav-link px-2 text-white">Juegos</a></li>
         <li><a href="aboutme" class="nav-link px-2 text-white">About</a></li>
         <li><a href="" class="nav-link px-2 text-white">FAQs</a></li>
       </ul>
       <h1 class="me-lg-auto" id="idTitulo"></h1>
-<!--ofcourse
+<!--
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
         <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
       </form> -->
@@ -22,17 +21,15 @@
 
 
         <input type="button" class="btn btn-outline-light me-2" routerLink="login" *ngIf = !stadoLogin value="Login">
-        <button type="button" class="btn btn-warning" *ngIf = !stadoLogin >Sign-up</button>
-        <button type="button" class="btn btn-warning" href="login" (click)="logOut()" *ngIf = stadoLogin > LogOut</button>
+        <input type="button" class="btn btn-warning" *ngIf = !stadoLogin routerLink="registrarse" value="Registro">
+        <input type="button" class="btn btn-warning" href="login" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
 
 
       </div>
     </div>
   </div>
 </header>
-<div *ngIf=stadoLogin align="center">
-    <img src="https://filmdaily.co/wp-content/uploads/2020/11/freegame-lede-1-1300x800.jpg"  alt="Responsive image" class="img-fluid"  >
-</div>
+
 <!-- <div align="center">
     <div>
         <a class= "btn-dark" routerLink="">Bienvenidos</a>

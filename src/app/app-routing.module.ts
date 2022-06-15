@@ -20,7 +20,7 @@ import { TableroComponent } from './tictactoe/tablero/tablero.component';
 
 const routes: Routes = [
 
-  {path:'', component:MenuComponent},
+  {path:'', component:BienvenidosComponent},
   {path: 'aboutme', component:AboutmeComponent},
   {path: 'listajuegos', component:ListaProductoComponent, canActivate:[LoginGuardGuard]},
   {path: 'ahorcado', component:AhorcadoComponent},
@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'mijuego', component:AdivinarelnumeroComponent},
   {path: 'producto', component:Producto},
   {path: 'tictactoe', component:TableroComponent},
-  {path:'**', component:BienvenidosComponent},
+  {path:'menu', component:MenuComponent},
 
 
 
