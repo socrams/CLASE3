@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Nombrepaises } from '../nombrepaises';
 
-
 @Component({
   selector: 'app-ahorcado',
-  
   templateUrl: './ahorcado.component.html',
   styleUrls: ['./ahorcado.component.css']
 })
+
 export class AhorcadoComponent implements OnInit {
 
-  
+
   public espacios: Array<string>;
-  public letra: string = '';
+  public letra: string = "";
 
   constructor() {
     this.miAhorcado = new Nombrepaises();
@@ -22,9 +21,7 @@ export class AhorcadoComponent implements OnInit {
 
   public miAhorcado: Nombrepaises;
 
-  ngOnInit(): void {
 
-  }
 
   validar() {
     if (/[a-zA-Z]$/.test(this.letra)) {
@@ -32,12 +29,14 @@ export class AhorcadoComponent implements OnInit {
       this.letra='';
     }
   }
-    
+
   contiene(pal:string):boolean{
       return this.miAhorcado.letrasElegidas.toLocaleLowerCase().indexOf(pal.toLocaleLowerCase())>=0;
-    
-  }  
 
-  
+  }
+
+  ngOnInit(): void {
+
+  }
 
 }

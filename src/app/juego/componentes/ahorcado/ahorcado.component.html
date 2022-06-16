@@ -1,9 +1,10 @@
+<app-menu></app-menu>
 <div class="row">
     <div class="col-12">
         &nbsp;
         <span *ngFor="let esp of  espacios ">
              <span *ngIf="contiene(esp)">
-                {{esp}} &nbsp; 
+                {{esp}} &nbsp;
             </span>
             <span *ngIf="!contiene(esp)">
                 _ &nbsp;
@@ -11,6 +12,5 @@
         </span>
     </div>
 </div>
-<input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra" >>
-
-{{miAhorcado.letrasElegidas}}         
+<input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra">
+{{miAhorcado.letrasElegidas}}

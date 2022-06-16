@@ -1,5 +1,4 @@
 import { Component} from '@angular/core';
-
 import { Router } from '@angular/router';
 import { Adivinaelnumero } from 'src/app/entidades/adivinaelnumero';
 
@@ -15,14 +14,14 @@ export class AdivinarelnumeroComponent  {
     intentoDelUsuario:number = 0;
     public resultado: String = "";
 
-constructor(public route:Router) { 
+constructor(public route:Router){
       this.adivina = new Adivinaelnumero();
-      
+
     }
 
   comparar(){
     if (this.intentoDelUsuario == this.adivina.valor) {
-      this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."  
+      this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."
       this.adivina.intentos=0;
     } else {
       this.adivina.msj = "Fallaste, intentelo denuevo."
@@ -30,6 +29,6 @@ constructor(public route:Router) {
    this.adivina.intentos++;
   }
 
-  
+
 
 }

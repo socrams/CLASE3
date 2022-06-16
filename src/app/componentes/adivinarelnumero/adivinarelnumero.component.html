@@ -1,5 +1,7 @@
+<app-menu></app-menu>
 <h1>Adivinar el numero!</h1><br>
 <h3>Para jugar iniciar el juego ingrese Valor minimo y maximo</h3>
+
 <div>
     <label class="mp-4">Ingrese minimo : </label>
     <input placeholder="ingrese minimo" type="number" [(ngModel)]="adivina.min">
@@ -7,10 +9,20 @@
     <input placeholder="ingrese maximo" type="number" [(ngModel)]="adivina.max"><br>
 </div>
 <div>
-    
+
     <input class="btn-blue" type="button" (click)="adivina.jugar()" value="Comenzar el juego"><br>
-    <input type="number" maxlength="1" [(ngModel)]="intentoDelUsuario">
-    <br><button type="submit" (click)="comparar()"> Adivinar</button>
+
+<div class="input-group">
+      <input type="number" maxlength="1" class="form-control-center border-light" style="padding: 15px" placeholder="Adivina el numero" [(ngModel)]="intentoDelUsuario">
+      <div class="input-group-append">
+          <button type="submit" class="btn btn-primary px-3" (click)="comparar()"> Adivinar </button>
+      </div>
+ </div>
+
+
+    <!-- <input type="number" maxlength="1" [(ngModel)]="intentoDelUsuario"> -->
+    <br>
+    <button type="submit" (click)="comparar()"> Adivinar</button>
     {{adivina.msj}}
 </div>
 
@@ -21,3 +33,5 @@
     | intentos: {{adivina.intentos}}
     | numero ramdom {{adivina.valor}}
 </div>
+
+
