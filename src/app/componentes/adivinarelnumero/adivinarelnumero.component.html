@@ -3,7 +3,7 @@
 <div >
   <h2>Adivinar el numero!</h2><br>
   <h3>Para jugar iniciar el juego ingrese Valor minimo y maximo</h3>
-  <div class="atras container mp-4 py-4">
+  <div class="atras container mp-4 py-4 control">
     <div class="mp-4 py-4" >
         <label >Ingrese minimo : </label>
         <input placeholder="ingrese minimo" type="number" [(ngModel)]="adivina.min">
@@ -12,16 +12,18 @@
     </div>
 
     <div class="py-4">
-        <input class="btn-blue" type="button" (click)="adivina.jugar()" value="Comenzar el juego">
+        <input class="btn btn-primary" type="button" (click)="adivina.jugar()" value="Comenzar el juego">
     </div>
 
 
-    <div class="py-4">
+    <div class="py-4 container">
         <input type="number" maxlength="1" [(ngModel)]="intentoDelUsuario" *ngIf="adivina.control" >
     </div>
 
-    <div class="py-4">
-        <button class="btn btn-warning border-width mp-4 py-4" type="submit" (click)="comparar()" *ngIf="adivina.control"> Adivinar</button>
+    <div class="py-4 container">
+        <button class="btn btn-success mp-4 py-4" type="submit" (click)="comparar()" *ngIf="adivina.control">
+          Adivinar
+        </button>
     </div >
 
     <label>{{adivina.msj}}</label>
@@ -29,10 +31,7 @@
     <li>minimo: {{adivina.min}}</li>
     <li>maximo: {{adivina.max}}</li>
     <li>intentos: {{adivina.intentos}}</li>
-    <button type="button" class="btn btn-danger" value="Revelar numero" (click)=!adivina.result>
-        {{adivina.valor}}
-    </button>
-    {{adivina.valor}}
+    <input type="button" class="btn btn-danger" [(ngModel)]="sarasa" (click)="getResultado()" >
   </div>
 </div>
 </html>

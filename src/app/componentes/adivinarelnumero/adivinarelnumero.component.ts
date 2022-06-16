@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Adivinaelnumero } from 'src/app/entidades/adivinaelnumero';
-
+import { Usuario } from 'src/app/entidades/usuario';
 
 @Component({
   selector: 'app-adivinarelnumero',
@@ -14,10 +14,12 @@ export class AdivinarelnumeroComponent  {
     adivina:Adivinaelnumero;
     intentoDelUsuario:number = 0;
     public resultado: String = "";
+    public sarasa: any = "Revelar Numero" ;
+    // unUsuario:Usuario;
 
 constructor(public route:Router) {
       this.adivina = new Adivinaelnumero();
-
+      // this.unUsuario = new Usuario();
     }
 
   comparar(){
@@ -30,7 +32,9 @@ constructor(public route:Router) {
    this.adivina.intentos++;
   }
   getResultado(){
-    return (!this.adivina.result);
+   !this.adivina.result;
+   this.sarasa = this.adivina.valor;
+   return this.sarasa;
   }
 
 

@@ -1,18 +1,31 @@
-    <div>
-        &nbsp;
-        <span *ngFor="let esp of  espacios ">
-             <span *ngIf="contiene(esp)">
-                {{esp}} &nbsp;
-            </span>
-            <span *ngIf="!contiene(esp)">
-                _ &nbsp;
-            </span>
-        </span>
+<app-menu></app-menu>
+<div class="container centrar">
+
+
+  <h1 class="u-custom-font u-font-abril-fatface u-text u-title u-text-2 container">Ahoracado de Nombre de Paises</h1>
+
+  <div>
+    &nbsp;
+    <span class="container" *ngFor="let esp of  espacios ">
+      <span *ngIf="contiene(esp)">
+        {{esp}} &nbsp;
+      </span>
+      <span *ngIf="!contiene(esp)">
+        _ &nbsp;
+      </span>
+    </span>
+  </div>
+  <div>
+    <input class="caja" type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
+    <div class="my-4">
+      <h2>Letras ya elegidas</h2>
+      <label>{{miAhorcado.letrasElegidas}}</label>
     </div>
-<input type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
-{{miAhorcado.letrasElegidas}}
-<div>{{mensaje}}</div>
-<br>
+  </div>
+  <div>
+    {{mensaje}}
+  </div>
+</div>
 
 
 
