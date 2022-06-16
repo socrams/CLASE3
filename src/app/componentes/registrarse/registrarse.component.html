@@ -6,7 +6,7 @@
 <input type="button"  (click)="Registro()"> -->
 
 
-
+<app-menu></app-menu>
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,12 +69,12 @@
     </style>
   </head>
   <body class="text-center">
-    
+
 <main class="form-signin w-100 m-auto">
     <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please Register </h1>
 
-    <div class="form-floating"> 
+    <div class="form-floating">
         <input class="form-control" placeholder= "nombre" type="text" [(ngModel)]="miUsuario.nombre">
       <label for="floatingInput">Nombre</label>
     </div>
@@ -93,12 +93,12 @@
         <input class="form-control" placeholder="contraseña" type="password" [(ngModel)]="miUsuario.pass" id="pass">
         <label for="floatingPassword">Password</label>
       </div>
-   
+
     <input class="btn btn-danger " type="button" (click)="Registro()" value="Registro">
 
 </main>
 
 
-    
+
   </body>
 </html>

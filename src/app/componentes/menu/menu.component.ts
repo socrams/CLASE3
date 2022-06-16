@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/helper/login.service';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/helper/login.service';
 export class MenuComponent implements OnInit {
   stadoLogin: boolean = false;
 
-  constructor(public loginService: LoginService ) {
+  constructor(public loginService: LoginService) {
     this.stadoLogin = loginService.getEstaLogeado();
   }
 
@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit {
     this.loginService.logout();
   }
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
 
   }

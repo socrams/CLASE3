@@ -3,4 +3,5 @@ export class Usuario {
     apellido:String = "";
     usuario:String = "";
     pass:String = "";
+    puntaje:Number = 0;
 }

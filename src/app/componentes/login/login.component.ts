@@ -1,7 +1,8 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
-import { text } from 'express';
+// import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+// import { text } from 'express';
 import { Usuario } from 'src/app/entidades/usuario';
 import { LoginService } from 'src/app/helper/login.service';
 
