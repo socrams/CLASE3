@@ -1,4 +1,35 @@
+.caja{
+    width: 20%;
+    height: 20%;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 1%;
+    text-align: center;
+}
+.centrar{
+    text-align: center;
+}
+
 p
 {
     display: inline-block;
+}
+
+.u-font-arial.u-custom-font {
+  font-family: Arial, sans-serif !important;
+}
+.u-font-abril-fatface.u-custom-font {
+  font-family: 'Abril Fatface', cursive !important;
+}
+
+h1.u-title {
+  font-weight: 400;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

@@ -1,37 +1,37 @@
 <app-menu></app-menu>
-<h1>Adivinar el numero!</h1><br>
-<h3>Para jugar iniciar el juego ingrese Valor minimo y maximo</h3>
+<html class="masatras">
+<div >
+  <h2>Adivinar el numero!</h2><br>
+  <h3>Para jugar iniciar el juego ingrese Valor minimo y maximo</h3>
+  <div class="atras container mp-4 py-4 control">
+    <div class="mp-4 py-4" >
+        <label >Ingrese minimo : </label>
+        <input placeholder="ingrese minimo" type="number" [(ngModel)]="adivina.min">
+        <label >Ingrese maximo : </label>
+        <input placeholder="ingrese maximo" type="number" [(ngModel)]="adivina.max">
+    </div>
 
-<div>
-    <label class="mp-4">Ingrese minimo : </label>
-    <input placeholder="ingrese minimo" type="number" [(ngModel)]="adivina.min">
-    <label class="mp-4">Ingrese maximo : </label>
-    <input placeholder="ingrese maximo" type="number" [(ngModel)]="adivina.max"><br>
+    <div class="py-4">
+        <input class="btn btn-primary" type="button" (click)="adivina.jugar()" value="Comenzar el juego">
+    </div>
+
+
+    <div class="py-4 container">
+        <input type="number" maxlength="1" [(ngModel)]="intentoDelUsuario" *ngIf="adivina.control" >
+    </div>
+
+    <div class="py-4 container">
+        <button class="btn btn-success mp-4 py-4" type="submit" (click)="comparar()" *ngIf="adivina.control">
+          Adivinar
+        </button>
+    </div >
+
+    <label>{{adivina.msj}}</label>
+
+    <li>minimo: {{adivina.min}}</li>
+    <li>maximo: {{adivina.max}}</li>
+    <li>intentos: {{adivina.intentos}}</li>
+    <input type="button" class="btn btn-danger" [(ngModel)]="sarasa" (click)="getResultado()" >
+  </div>
 </div>
-<div>
-
-    <input class="btn-blue" type="button" (click)="adivina.jugar()" value="Comenzar el juego"><br>
-
-<div class="input-group">
-      <input type="number" maxlength="1" class="form-control-center border-light" style="padding: 15px" placeholder="Adivina el numero" [(ngModel)]="intentoDelUsuario">
-      <div class="input-group-append">
-          <button type="submit" class="btn btn-primary px-3" (click)="comparar()"> Adivinar </button>
-      </div>
- </div>
-
-
-    <!-- <input type="number" maxlength="1" [(ngModel)]="intentoDelUsuario"> -->
-    <br>
-    <button type="submit" (click)="comparar()"> Adivinar</button>
-    {{adivina.msj}}
-</div>
-
-
-<div>
-    minimo: {{adivina.min}}
-    | maximo: {{adivina.max}}
-    | intentos: {{adivina.intentos}}
-    | numero ramdom {{adivina.valor}}
-</div>
-
-
+</html>

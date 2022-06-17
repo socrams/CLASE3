@@ -9,7 +9,7 @@
         <li><a href="" class="nav-link px-2 text-secondary">Home</a></li>
         <li><a href="listajuegos" class="nav-link px-2 text-white">Juegos</a></li>
         <li><a href="aboutme" class="nav-link px-2 text-white">About</a></li>
-        <li><a href="" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="estadisticas" class="nav-link px-2 text-white">Estadisticas</a></li>
       </ul>
       <h1 class="me-lg-auto" id="idTitulo"></h1>
 <!--
@@ -18,8 +18,12 @@
       </form> -->
 
       <div class="text-end">
-        <input type="button" class="btn btn-outline-light me-2" routerLink="Login" *ngIf = !stadoLogin value="Login">
-        <input type="button" class="btn btn-warning"  routerLink="Registrarse" *ngIf = !stadoLogin value="Registro">
+        <button type="button" class="btn btn-outline-light me-2" *ngIf = !stadoLogin>
+          <a href="../login">Login</a>
+        </button>
+        <button type="button" class="btn btn-warning" *ngIf = !stadoLogin >
+          <a href="../registrarse">Registrarse</a>
+        </button>
         <input type="button" class="btn btn-warning" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
       </div>
     </div>

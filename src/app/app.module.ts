@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -19,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
+
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+// import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,8 @@ import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
