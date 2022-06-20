@@ -18,12 +18,17 @@
       </form> -->
 
       <div class="text-end">
+<<<<<<< Updated upstream
         <button type="button" class="btn btn-outline-light me-2" *ngIf = !stadoLogin>
           <a href="../login">Login</a>
         </button>
         <button type="button" class="btn btn-warning" *ngIf = !stadoLogin >
           <a href="../registrarse">Registrarse</a>
         </button>
+=======
+        <input type="button" class="btn btn-outline-light me-2" routerLink="login" *ngIf = !stadoLogin value="Login">
+        <input type="button" class="btn btn-warning"  routerLink="registrarse" *ngIf = !stadoLogin value="Registro">
+>>>>>>> Stashed changes
         <input type="button" class="btn btn-warning" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
       </div>
     </div>

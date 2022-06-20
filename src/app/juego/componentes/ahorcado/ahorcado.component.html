@@ -1,4 +1,4 @@
-<app-menu></app-menu>
+
 <div class="row">
     <div class="col-12">
         &nbsp;
@@ -12,5 +12,7 @@
         </span>
     </div>
 </div>
-<input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra">
-{{miAhorcado.letrasElegidas}}
+<input type="text" max="1" (keyup)="validar()" [(ngModel)]='letra' >
+<div>
+  <label for="">{{miAhorcado.letrasElegidas}}</label>
+</div>

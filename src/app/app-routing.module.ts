@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//import { pathToFileURL } from 'url';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { AdivinarelnumeroComponent } from './componentes/adivinarelnumero/adivinarelnumero.component';
@@ -8,15 +7,15 @@ import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.comp
 import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
 import { ListaProductoComponent } from './componentes/lista-producto/lista-producto.component';
 import { LoginGuardGuard } from './componentes/login-guard.guard';
-import { LoginComponent } from './componentes/login/login.component';
 import { MenuComponent } from './componentes/menu/menu.component';
-import { ProductoComponent } from './componentes/producto/producto.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
-import { Adivinaelnumero } from './entidades/adivinaelnumero';
-import { LoginModule } from './login/login.module';
-import { Producto } from './producto';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 // import { pathToFileURL } from 'url';
+// import { LoginModule } from './login/login.module';
+// import { Adivinaelnumero } from './entidades/adivinaelnumero';
+// import { ProductoComponent } from './componentes/producto/producto.component';
+// import { LoginComponent } from './componentes/login/login.component';
+// import { Component } from '@angular/core';
 
 const routes: Routes = [
 
@@ -28,9 +27,10 @@ const routes: Routes = [
   {path:'registrarse', component:RegistrarseComponent},
   {path:'estadisticas', component:EstadisticasComponent},
   {path: 'mijuego', component:AdivinarelnumeroComponent},
-  {path: 'producto', component:Producto},
   {path: 'tictactoe', component:TableroComponent},
   {path:'menu', component:MenuComponent},
+  {path:'**', component:BienvenidosComponent},
+
 
 
 

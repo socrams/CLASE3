@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Nombrepaises } from '../nombrepaises';
 
+
+
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
