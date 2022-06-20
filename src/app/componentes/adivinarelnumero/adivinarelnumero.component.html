@@ -24,14 +24,14 @@
         <button class="btn btn-success mp-4 py-4" type="submit" (click)="comparar()" *ngIf="adivina.control">
           Adivinar
         </button>
-    </div >
+    </div>
 
     <label>{{adivina.msj}}</label>
-
     <li>minimo: {{adivina.min}}</li>
     <li>maximo: {{adivina.max}}</li>
     <li>intentos: {{adivina.intentos}}</li>
-    <input type="button" class="btn btn-danger" [(ngModel)]="sarasa" (click)="getResultado()" >
+
+    <input type="button" class="btn btn-danger" [(ngModel)]="sarasa" (click)="getResultado()"  *ngIf="adivina.control" >
   </div>
 </div>
 </html>

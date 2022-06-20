@@ -28,7 +28,7 @@ export class RegistrarseComponent implements OnInit{
               ListaUsuario.push(this.miUsuario);
               localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
               this.route.navigateByUrl("login");
-              }
+          }
 
 
            /*  sessionStorage.setItem("Usuario",this.usuario);
@@ -36,6 +36,7 @@ export class RegistrarseComponent implements OnInit{
            */
       }
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
   }
 
