@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+
 import { LoginService } from 'src/app/helper/login.service';
-<<<<<<< Updated upstream
-import { RouterModule } from '@angular/router';
-=======
->>>>>>> Stashed changes
+
 
 @Component({
   selector: 'app-menu',
@@ -14,11 +11,7 @@ import { RouterModule } from '@angular/router';
 export class MenuComponent implements OnInit {
   stadoLogin: boolean = false;
 
-<<<<<<< Updated upstream
-  constructor(public loginService: LoginService) {
-=======
-  constructor(public routerLink:RouterLink,public router:Router,public loginService: LoginService ) {
->>>>>>> Stashed changes
+  constructor(public loginService: LoginService ) {
     this.stadoLogin = loginService.getEstaLogeado();
   }
 
