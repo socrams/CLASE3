@@ -12,23 +12,15 @@
         <li><a href="estadisticas" class="nav-link px-2 text-white">Estadisticas</a></li>
       </ul>
       <h1 class="me-lg-auto" id="idTitulo"></h1>
-<!--
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-        <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
-      </form> -->
+
 
       <div class="text-end">
-<<<<<<< Updated upstream
         <button type="button" class="btn btn-outline-light me-2" *ngIf = !stadoLogin>
           <a href="../login">Login</a>
         </button>
         <button type="button" class="btn btn-warning" *ngIf = !stadoLogin >
           <a href="../registrarse">Registrarse</a>
         </button>
-=======
-        <input type="button" class="btn btn-outline-light me-2" routerLink="login" *ngIf = !stadoLogin value="Login">
-        <input type="button" class="btn btn-warning"  routerLink="registrarse" *ngIf = !stadoLogin value="Registro">
->>>>>>> Stashed changes
         <input type="button" class="btn btn-warning" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
       </div>
     </div>

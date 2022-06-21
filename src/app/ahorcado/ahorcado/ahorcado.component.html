@@ -2,7 +2,7 @@
 <div class="container centrar">
 
 
-  <h1 class="u-custom-font u-font-abril-fatface u-text u-title u-text-2 container">Ahoracado de Nombre de Paises</h1>
+  <h1 class="u-custom-font u-font-abril-fatface u-text u-title u-text-2 container">Ahorcado de Nombre de Paises</h1>
 
   <div>
     &nbsp;
@@ -15,6 +15,7 @@
       </span>
     </span>
   </div>
+
   <div>
     <input class="caja" type="text" maxlength="1" (keyup)="validar()" [(ngModel)]="letra">
     <div class="my-4">
@@ -24,6 +25,11 @@
   </div>
   <div>
     {{mensaje}}
+    <div>{{this.control}}</div>
+    <div>{{this.espacios}}</div>
+    <!-- <button (click)="boton()" class="btn btn-warning">BOTON</button>
+    <input type="text" [(ngModel)]="this.juntar"> -->
+
   </div>
 </div>
 

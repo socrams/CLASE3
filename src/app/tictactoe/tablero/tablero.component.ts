@@ -21,7 +21,7 @@ export class TableroComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.winner = "";
     this.xIsNext = true;
-  } 
+  }
 
   get Player(){
     return this.xIsNext ? 'X' : 'O';
@@ -53,7 +53,8 @@ export class TableroComponent implements OnInit {
         this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
-        return this.squares[a];
+       return this.squares[a];
+
       }
     }
     return null;

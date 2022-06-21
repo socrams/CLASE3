@@ -16,16 +16,14 @@ export class AhorcadoComponent implements OnInit  {
   public miAhorcado: Ahorcado;
   public palabra: any;
   control: number=0;
+  public juntar: string ='';
 
 
   constructor(public palabrasService:AhorcadoService) {
     this.miAhorcado = new Ahorcado();
     this.palabrasService.getListaPalabras()
     .subscribe(resp => {
-         this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].name.common);
-
-      // console.log(
-      //   this.miAhorcado.palabra);
+        this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].name.common);
         this.espacios = this.miAhorcado.palabra.split('');
      });
   }
@@ -36,19 +34,28 @@ export class AhorcadoComponent implements OnInit  {
   }
 
   validar() {
-    if (/[a-zA-Z]$/.test(this.letra)) {
+    if (/[a-zA-Z]$/.test(this.letra) ) {
       this.miAhorcado.letrasElegidas += ( (this.letra.toUpperCase()) + ' - ');
-
       this.letra='';
       this.mensaje='';
-      this.control++;
+
     }
     else {
       this.letra= "";
       this.mensaje = "Debe ingresar solo letras";
     }
-    // console.log(this.control);
+    if ((this.juntar=this.espacios.join(''))==this.miAhorcado.palabra){
+      this.mensaje  = "Ganaste";
+    }
+    // console.log(this.miAhorcado.palabra);
+
+    
   }
+  boton(){
+
+  }
+
+
   contiene(pal:string):boolean{
     return this.miAhorcado.letrasElegidas.toLocaleLowerCase().indexOf(pal.toLocaleLowerCase())>=0;
   }

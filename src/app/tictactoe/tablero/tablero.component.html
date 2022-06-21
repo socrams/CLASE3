@@ -1,19 +1,23 @@
 <app-menu></app-menu>
-<h1>Current Player: {{ Player }} </h1>
 
-<button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
+<div class="container"><h1 class="u-custom-font u-font-abril-fatface u-text  container">Current Player: {{ Player }} </h1>
 
+<button class="btn btn-info caja" (click)="newGame()">Start new Game</button>
 
-<h2 *ngIf="winner">
-    Player {{ winner }} won the game!
-</h2>
+<div>
+  <h2 *ngIf="winner">
+      Player {{ winner }} won the game!
+  </h2>
+</div>
+<div>
+  <main *ngIf="!winner">
+      <app-cruz
+          *ngFor="let val of squares; let i = index"
+          [value]="val"
+          (click)="makeMove(i)"
 
+      > </app-cruz>
 
-<main>
-    <app-cruz
-        *ngFor="let val of squares; let i = index"
-        [value]="val"
-        (click)="makeMove(i)"
-    > </app-cruz>
-
-</main>
+  </main>
+</div>
+</div>
