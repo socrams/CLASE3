@@ -1,12 +1,54 @@
-main {
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-gap: 0px;
+body {
+  padding-top: 20px;
+  background: #f5f7f8;
+}
+
+.tablero {
+  display: grid;
+  background: #222;
+  width: 100%;
+  height: 100%;
+  max-width: 770px;
+  margin: 0 auto;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-gap: 0px;
+
 }
 
 app-cruz {
+  border: 1px gray solid;
+  height: 150px;
+}
+
+
+/* .tablero {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 0px;
+} */
+
+/* app-cruz {
     border: 1px gray solid;
-    height: 200px;
+    height: 100px;
+}
+
+h2 {
+  color: black;
+    font: 0.875em/1.5em "Microsoft YaHei", "ptsans", "Arial", sans serif;
+    font-size: 27px;
+  background: #2B6695;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10, 10, 0, 0.5);
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  line-height: 25px;
+  text-align: center;
+  padding: 5px 40px;
+  text-shadow: 2px 2px 3px #222222;
 }
 
 .caja{
@@ -29,19 +71,7 @@ app-cruz {
 p
 {
   display: inline-block;
-}
+} */
 
-.u-font-arial.u-custom-font {
-font-family: Arial, sans-serif !important;
-}
-.u-font-abril-fatface.u-custom-font {
-font-family: 'Abril Fatface', cursive !important;
-}
 
-h1.u-title {
-font-weight: 400;
-font-size: 4.5rem;
-line-height: 1.1;
-margin-top: 20px;
-margin-bottom: 20px;
-}
+

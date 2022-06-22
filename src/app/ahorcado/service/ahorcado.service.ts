@@ -19,9 +19,8 @@ export class AhorcadoService {
   }
   getRamdomWord() {
      this.getListaPalabras().subscribe(resp => {
-       (resp[Math.floor(Math.random()*250)].name.common);
+       (resp[Math.floor(Math.random()*250)].translations.spa.common);
      });
   }
-
 
 }

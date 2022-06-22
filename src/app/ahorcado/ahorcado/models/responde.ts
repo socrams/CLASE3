@@ -1,6 +1,10 @@
 export interface Welcome {
-    name: Name;
+    translations: translations;
 }
-interface Name {
-    common: string;
+interface translations {
+    spa: common;
 }
+interface common {
+  common: string
+}
+

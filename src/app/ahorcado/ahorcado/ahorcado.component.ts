@@ -23,7 +23,7 @@ export class AhorcadoComponent implements OnInit  {
     this.miAhorcado = new Ahorcado();
     this.palabrasService.getListaPalabras()
     .subscribe(resp => {
-        this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].name.common);
+        this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].translations.spa.common);
         this.espacios = this.miAhorcado.palabra.split('');
      });
   }
@@ -44,12 +44,12 @@ export class AhorcadoComponent implements OnInit  {
       this.letra= "";
       this.mensaje = "Debe ingresar solo letras";
     }
-    if ((this.juntar=this.espacios.join(''))==this.miAhorcado.palabra){
-      this.mensaje  = "Ganaste";
-    }
+    // if ((this.juntar=this.espacios.join(''))==this.miAhorcado.palabra){
+    //   this.mensaje  = "Ganaste";
+    // }
     // console.log(this.miAhorcado.palabra);
 
-    
+
   }
   boton(){
 

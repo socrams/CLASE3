@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 public form: FormGroup;
 
 
-  constructor(public fb:FormBuilder) { 
+  constructor(public fb:FormBuilder) {
 
     this.form=fb.group({
       'nombre':['' ,[Validators.required],[Validators.min(5)]],
@@ -21,7 +21,8 @@ public form: FormGroup;
 
     this.form.getRawValue();
   }
-    
+
+  
   ngOnInit(): void {
   }
 

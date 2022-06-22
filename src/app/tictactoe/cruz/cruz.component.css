@@ -1,6 +1,9 @@
-button 
-    { width: 100%; 
-        height: 100%; 
-        font-size: 
-        5em !important; 
+button
+    {
+        width: 100%;
+        height: 100%;
+        font-size: 3em !important;
+    }
+    button:hover{
+      border-color: rgb(255, 17, 0);
     }
