@@ -2,7 +2,11 @@
 <app-menu></app-menu>
 
 <div class="container mt-4"><h1 class="container" *ngIf="!winner">Turno de {{ Player }} </h1>
-
+  <ul>
+    <li class="text" *ngFor="let punto of puntos | async">
+      {{puntos.name}}
+    </li>
+  </ul>
   <button class="btn btn-info mt-4 my-4" (click)="newGame()">Comenzar</button>
 
   <div>

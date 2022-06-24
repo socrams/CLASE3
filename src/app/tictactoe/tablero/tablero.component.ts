@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tablero',
@@ -7,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tablero.component.css']
 })
 export class TableroComponent implements OnInit {
+  puntos:  Observable<any[]>; //
 
   squares = Array(9).fill(null);
   winner = "";
   xIsNext = true;
 
-  constructor() { }
+  constructor(firestore: AngularFirestore) {
+    this.puntos = firestore.collection('puntos').valueChanges();
+    }
 
   ngOnInit(): void {
     this.newGame();

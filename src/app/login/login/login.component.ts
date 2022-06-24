@@ -22,7 +22,8 @@ public form: FormGroup;
     this.form.getRawValue();
   }
 
-  
+
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
   }
 
