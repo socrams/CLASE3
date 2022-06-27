@@ -1,22 +1,22 @@
 
 <app-menu></app-menu>
 
-<div class="container mt-4"><h1 class="container" *ngIf="!winner">Turno de {{ Player }} </h1>
+<div class="container mt-4"><h1 class="container" *ngIf="!ganador">Turno de {{ Jugador }} </h1>
   <ul>
-    <li class="text" *ngFor="let punto of puntos | async">
+    <!-- <li class="text" *ngFor="let punto of puntos | async">
       {{puntos.name}}
-    </li>
+    </li> -->
   </ul>
   <button class="btn btn-info mt-4 my-4" (click)="newGame()">Comenzar</button>
 
   <div>
-    <h2 *ngIf="winner">Jugador {{ winner }} gano el juego!</h2>
+    <h2 *ngIf="ganador">Jugador {{ ganador }} gano el juego!</h2>
   </div>
-  <div class="tablero" *ngIf="!winner">
+  <div class="tablero" *ngIf="!ganador">
         <app-cruz
-            *ngFor="let val of squares; let i = index"
+            *ngFor="let val of cuadrados; let i = index"
             [value]="val"
-            (click)="makeMove(i)">
+            (click)="hacerMovimiento(i)">
         </app-cruz>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<html class="masatras">
-<div >
+
+<div>
   <h2>Adivinar el numero!</h2><br>
   <h3>Para jugar iniciar el juego ingrese Valor minimo y maximo</h3>
   <div class="atras container mp-4 py-4 control">
@@ -10,7 +10,6 @@
         <label >Ingrese maximo : </label>
         <input placeholder="ingrese maximo" type="number" [(ngModel)]="adivina.max">
     </div>
-
     <div class="py-4">
         <input class="btn btn-primary" type="button" (click)="adivina.jugar()" value="Comenzar el juego">
     </div>
@@ -26,12 +25,12 @@
         </button>
     </div>
 
-    <label>{{adivina.msj}}</label>
+    <label>{{adivina.msj}}</label><br>
     <li>minimo: {{adivina.min}}</li>
     <li>maximo: {{adivina.max}}</li>
     <li>intentos: {{adivina.intentos}}</li>
 
-    <input type="button" class="btn btn-danger" [(ngModel)]="sarasa" (click)="getResultado()"  *ngIf="adivina.control" >
+    <input type="button" class="btn btn-danger solid" [(ngModel)]="sarasa" (click)="getResultado()"  *ngIf="adivina.control" >
   </div>
 </div>
-</html>
+

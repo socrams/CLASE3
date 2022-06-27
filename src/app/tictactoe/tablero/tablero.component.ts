@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+//import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./tablero.component.css']
 })
 export class TableroComponent implements OnInit {
-  puntos:  Observable<any[]>; //
+  //puntos:  Observable<any[]>; //
 
-  squares = Array(9).fill(null);
-  winner = "";
+  cuadrados = Array(9).fill(null);
+  ganador = "";
   xIsNext = true;
 
-  constructor(firestore: AngularFirestore) {
-    this.puntos = firestore.collection('puntos').valueChanges();
+  constructor() {//firestore: AngularFirestore
+    //this.puntos = firestore.collection('puntos').valueChanges();
     }
 
   ngOnInit(): void {
@@ -23,29 +23,29 @@ export class TableroComponent implements OnInit {
   }
 
   newGame() {
-    this.squares = Array(9).fill(null);
-    this.winner = "";
+    this.cuadrados = Array(9).fill(null);
+    this.ganador = "";
     this.xIsNext = true;
   }
 
-  get Player(){
+  get Jugador(){
     return this.xIsNext ? 'X' : 'O';
   }
 
-  makeMove(idx: number) {
-    if (!this.squares[idx]) {
-      this.squares.splice(idx, 1, this.Player);
+  hacerMovimiento(idx: number) {
+    if (!this.cuadrados[idx]) {
+      this.cuadrados.splice(idx, 1, this.Jugador);
       this.xIsNext = !this.xIsNext;
     }
-    this.winner = this.calculatewinner();
-    // if (this.winner) {
+    this.ganador = this.calcularGanador();
+    // if (this.ganador) {
     //   this.miUsuario.puntaje3++; agregar service
 
     // }
   }
 
-  calculatewinner() {
-    const lines = [
+  calcularGanador() {
+    const lineas = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -55,14 +55,15 @@ export class TableroComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6]
     ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
+    for (let i = 0; i < lineas.length; i++) 
+    {
+      const [a, b, c] = lineas[i];
       if (
-        this.squares[a] &&
-        this.squares[a] === this.squares[b] &&
-        this.squares[a] === this.squares[c]
+        this.cuadrados[a] &&
+        this.cuadrados[a] === this.cuadrados[b] &&
+        this.cuadrados[a] === this.cuadrados[c]
       ) {
-       return this.squares[a];
+       return this.cuadrados[a];
 
       }
     }

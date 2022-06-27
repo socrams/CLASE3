@@ -1,3 +1,4 @@
+
 import { AdivinarelnumeroComponent } from "../componentes/adivinarelnumero/adivinarelnumero.component";
 
 export class Adivinaelnumero {
@@ -21,6 +22,7 @@ export class Adivinaelnumero {
         //this.valor= Math.floor(Math.random()*10);
         this.min;
         this.control= true;
-
+        this.intentos=0;
+        
     }
 }
