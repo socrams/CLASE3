@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Usuario } from 'src/app/entidades/usuario';
 import { Ahorcado } from '../class/ahorcado';
 import { AhorcadoService } from '../service/ahorcado.service';
 
@@ -21,6 +22,7 @@ export class AhorcadoComponent implements OnInit  {
 
   constructor(public palabrasService:AhorcadoService) {
     this.miAhorcado = new Ahorcado();
+    //this.miUsuario = new Usuario();
     this.palabrasService.getListaPalabras()
     .subscribe(resp => {
         this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].translations.spa.common);
@@ -38,20 +40,24 @@ export class AhorcadoComponent implements OnInit  {
       this.miAhorcado.letrasElegidas += ( (this.letra.toUpperCase()) + ' - ');
       this.letra='';
       this.mensaje='';
-
+      if (this.revisarCompleto()) {
+        this.mensaje= "ganaste";
+        //miUsuario.puntaje2 += 5;
+      }
     }
     else {
       this.letra= "";
       this.mensaje = "Debe ingresar solo letras";
     }
-    // if ((this.juntar=this.espacios.join(''))==this.miAhorcado.palabra){
-    //   this.mensaje  = "Ganaste";
-    // }
-    // console.log(this.miAhorcado.palabra);
-
-
   }
-  boton(){
+
+  revisarCompleto():boolean{
+    var salida= true;
+    this.espacios.forEach(element =>
+    { if (this.miAhorcado.letrasElegidas.indexOf(element)<=0)
+        salida = false;
+    });
+    return salida;
 
   }
 

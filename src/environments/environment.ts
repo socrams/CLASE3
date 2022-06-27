@@ -14,7 +14,7 @@ export const environment = {
     messagingSenderId: '205965517774',
     measurementId: 'G-TFZDQ7L65Z',
   },
-  production: false
+    production: false
 };
 
 /*
@@ -22,7 +22,7 @@ const firebaseConfig = {
  projectId: "beltran-oggioni",
   apiKey: "AIzaSyD8wYZ-YTgxHVGKX9zd8zF_Y1K8aJlR3HQ",
 
-  
+
   databaseURL: "https://beltran-oggioni-default-rtdb.firebaseio.com",
   appId: "1:205965517774:web:8019af1d9b42f25fd1419f",
   storageBucket: "beltran-oggioni.appspot.com",
