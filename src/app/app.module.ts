@@ -18,15 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
+
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire/compat';
-import { FirebaseApp } from '@angular/fire/app';
-
-// import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+//import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,12 +48,7 @@ import { FirebaseApp } from '@angular/fire/app';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    RouterModule,
-
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase),
-
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
