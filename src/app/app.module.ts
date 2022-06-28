@@ -21,6 +21,7 @@ import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PremiumComponent } from './premium/premium.component';
 //import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -41,6 +42,7 @@ import { RouterModule } from '@angular/router';
     CruzComponent,
     TableroComponent,
     CabezeraComponent,
+    PremiumComponent,
   ],
   imports: [
     BrowserModule,

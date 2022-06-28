@@ -7,9 +7,9 @@
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="listajuegos" class="nav-link px-2 text-white">Juegos</a></li>
-        <li><a href="aboutme" class="nav-link px-2 text-white">About</a></li>
-        <li><a href="estadisticas" class="nav-link px-2 text-white">Estadisticas</a></li>
+        <li><a routerLink="/listajuegos" class="nav-link px-2 text-white">Juegos</a></li>
+        <li><a routerLink="/aboutme" class="nav-link px-2 text-white">About</a></li>
+        <li><a routerLink="/estadisticas" class="nav-link px-2 text-white">Estadisticas</a></li>
 
       </ul>
       <h1 class="me-lg-auto" id="idTitulo"></h1>
@@ -19,7 +19,7 @@
 
         <input type="button" class="btn btn-warning" routerLink="/registrarse" value="Registrarse" *ngIf = !stadoLogin >
           <!-- <a href="../registrarse">Registrarse</a> -->
-
+        <input type="button" class="btn btn-outline-light me-2" routerLink="/premium" *ngIf = stadoLogin value="Quiere ser Premium?">
         <input type="button" class="btn btn-warning" (click)="logOut()" *ngIf = stadoLogin value="Log Out">
       </div>
     </div>
