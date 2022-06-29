@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     }
 
    }
+   
 loginHardCode(){
   this.usuarioGuardado.find((us)=>this.miUsuario.usuario=us.usuario);
   this.usuarioGuardado.find((us)=>this.miUsuario.pass=us.pass);

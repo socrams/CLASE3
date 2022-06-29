@@ -22,17 +22,23 @@ constructor(public route:Router) {
     }
 
   comparar(){
-    if (this.intentoDelUsuario == this. adivina.valor) 
+    if (this.intentoDelUsuario == this. adivina.valor)
     {
       this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."
       //this.adivina.jugar();
       this.adivina.intentos=-1;
-    } else 
+      this.unUsuario.puntaje1+=5;
+      //
+
+      //
+
+    }else
     {
       this.adivina.msj = "Fallaste, intentelo denuevo."
     }
    this.adivina.intentos++;
   }
+
   getResultado(){
     // !this.adivina.result;
     this.sarasa = this.adivina.valor;

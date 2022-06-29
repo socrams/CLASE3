@@ -8,6 +8,7 @@ export class LoginService {
   public estaLogeado : boolean;
   private usuarioLogeado: Usuario | undefined;
   public nombreUsuario: String = "" ;
+  public puntaje1: number = 0;
 
 
 
@@ -37,6 +38,12 @@ export class LoginService {
     return this.estaLogeado;
   }
 
+  getPuntaje1(){
+    return this.usuarioLogeado?.puntaje1;
+  }
+  setPuntaje1(){
+    this.usuarioLogeado?.puntaje1;
+  }
 }
 
 
