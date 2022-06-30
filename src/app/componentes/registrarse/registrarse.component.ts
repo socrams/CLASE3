@@ -29,7 +29,8 @@ export class RegistrarseComponent implements OnInit{
               ListaUsuario.push(this.miUsuario);
               localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
               this.route.navigateByUrl("login");
-          }
+          }else{
+            console.log( " usuario ya registrado ");}
 
 
            /*  sessionStorage.setItem("Usuario",this.usuario);

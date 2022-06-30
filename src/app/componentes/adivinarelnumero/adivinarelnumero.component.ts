@@ -46,15 +46,19 @@ export class AdivinarelnumeroComponent  {
       //JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5; //tra puntaje suma 5.
       //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
       let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
+      //console.log(nombreUsuarioLogeado);
       this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario==nombreUsuarioLogeado);
+      this.ver[0].puntaje1 = this.ver[0].puntaje1 + 5;
+      localStorage.setItem("Usuarios",JSON.stringify(this.ver[0]));// guarda el nuevo puntaje.
       
-      
+      //
+
       console.log(this.ver);
       // this.usuarioLogeado = JSON.parse(local Storage.getItem("Usuarios")??"{}");
       // this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
-       this.puntaje1 = this.loginservice.getPuntaje1();
-       this.puntaje1 = this.puntaje1+5;
-       this.loginservice.setPuntaje1(this.puntaje1);
+      //  this.puntaje1 = this.loginservice.getPuntaje1();
+      //  this.puntaje1 = this.puntaje1+5;
+      //  this.loginservice.setPuntaje1(this.puntaje1);
     }else
     {
       this.adivina.msj = "Fallaste, intentelo denuevo."
