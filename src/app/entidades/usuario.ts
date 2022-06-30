@@ -3,7 +3,7 @@ export class Usuario {
     apellido: String = "";
     usuario:  String = "";
     pass:     String = "";
-    puntaje1: number = 0;
+    puntaje1: number = 0 ;
     puntaje2: number = 0;
     puntaje3: number = 0;
 }

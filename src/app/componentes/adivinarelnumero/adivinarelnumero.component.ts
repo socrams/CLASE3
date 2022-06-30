@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { Adivinaelnumero } from 'src/app/entidades/adivinaelnumero';
 import { Usuario } from 'src/app/entidades/usuario';
+import { LoginService } from 'src/app/helper/login.service';
 
 @Component({
   selector: 'app-adivinarelnumero',
@@ -15,23 +16,42 @@ export class AdivinarelnumeroComponent  {
     public resultado: String = "";
     public sarasa: any = "Revelar Numero" ;
     unUsuario:Usuario;
-
-constructor(public route:Router) {
+    puntaje1:number = 0;
+    ///
+    public ver:any = ""; 
+    
+    constructor(public route:Router, public loginservice:LoginService){
       this.adivina = new Adivinaelnumero();
       this.unUsuario = new Usuario();
+      //this.miUsuario = new Usuario();
+      // this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
+      // //public mensajeLogin : String = "";
     }
 
+    // cargarPuntaje(){
+    //   let usuario:Usuario|undefined =
+    //   this.usuarioGuardado.find((us)=>this.unUsuario.usuario==us.usuario
+    //   && us.pass == this.unUsuario.pass);
+    // }
+    
   comparar(){
     if (this.intentoDelUsuario == this. adivina.valor)
     {
       this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."
-      //this.adivina.jugar();
       this.adivina.intentos=-1;
-      this.unUsuario.puntaje1+=5;
-      //
-
-      //
-
+      this.puntaje1++;
+      // let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
+      // this.ver = JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5;
+      // localStorage.setItem("Puntaje",JSON.stringify(this.ver));
+      //JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5; //tra puntaje suma 5.
+      //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
+      this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario=="sss");
+      console.log(this.ver);
+      // this.usuarioLogeado = JSON.parse(local Storage.getItem("Usuarios")??"{}");
+      // this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
+       this.puntaje1 = this.loginservice.getPuntaje1();
+       this.puntaje1 = this.puntaje1+5;
+       this.loginservice.setPuntaje1(this.puntaje1);      
     }else
     {
       this.adivina.msj = "Fallaste, intentelo denuevo."

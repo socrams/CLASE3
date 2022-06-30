@@ -6,7 +6,7 @@ import { Usuario } from '../entidades/usuario';
 })
 export class LoginService {
   public estaLogeado : boolean;
-  private usuarioLogeado: Usuario | undefined;
+  private usuarioLogeado: Usuario ;//| undefined
   public nombreUsuario: String = "" ;
   public puntaje1: number = 0;
 
@@ -31,19 +31,21 @@ export class LoginService {
   }
 
   getUsuarioLogeado(){
-    return this.usuarioLogeado?.nombre;
+    return this.usuarioLogeado.nombre;
   }
 
   getEstaLogeado(){
     return this.estaLogeado;
   }
 
-  getPuntaje1(){
-    return this.usuarioLogeado?.puntaje1;
-  }
-  setPuntaje1(){
-    this.usuarioLogeado?.puntaje1;
-  }
+   getPuntaje1(){
+     return this.usuarioLogeado.puntaje1;
+   }
+   setPuntaje1(x:number){
+     this.usuarioLogeado.puntaje1=x;
+     localStorage.setItem("Puntos",JSON.stringify(this.usuarioLogeado));
+   }
+
 }
 
 
