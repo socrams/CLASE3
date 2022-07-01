@@ -16,15 +16,15 @@ export class AdivinarelnumeroComponent  {
     public resultado: String = "";
     public sarasa: any = "Revelar Numero" ;
     unUsuario:Usuario;
-    puntaje1:number = 0;
     ///
-    public ver:any = "";
+    todosLosUsuarios:Array<Usuario>
+    posicion :any ;
 
     constructor(public route:Router, public loginservice:LoginService){
       this.adivina = new Adivinaelnumero();
+      this.todosLosUsuarios = JSON.parse(localStorage.getItem("Usuarios")??"[]");
       this.unUsuario = new Usuario();
-      //this.miUsuario = new Usuario();
-      // this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios")??"[]");
+      
       // //public mensajeLogin : String = "";
     }
 
@@ -39,21 +39,24 @@ export class AdivinarelnumeroComponent  {
     {
       this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."
       this.adivina.intentos=-1;
-      this.puntaje1++;
       //
       // this.ver = JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5;
       // localStorage.setItem("Puntaje",JSON.stringify(this.ver));
       //JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5; //tra puntaje suma 5.
       //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
       let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
-      //console.log(nombreUsuarioLogeado);
-      this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario==nombreUsuarioLogeado);
-      this.ver[0].puntaje1 = this.ver[0].puntaje1 + 5;
-      localStorage.setItem("Usuarios",JSON.stringify(this.ver[0]));// guarda el nuevo puntaje.
       
-      //
-
-      console.log(this.ver);
+      this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario=="xx");
+      //console.log(this.posicion);
+      this.todosLosUsuarios[this.posicion].puntaje1=this.todosLosUsuarios[this.posicion].puntaje1+5;
+      //console.log(this.todosLosUsuarios);
+      localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));
+      
+      // JSON.parse(localStorage.getItem("Usuarios")??"[]").splice(this.posicion,1,);
+      //let i=JSON.parse(localStorage.getItem("Usuarios")??"[]").findIndex((t:any)=>t.usuario==nombreUsuarioLogeado).puntaje1;
+      // this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario==nombreUsuarioLogeado)[0].puntaje1;
+      // this.ver[0].puntaje1 = this.ver[0].puntaje1 + 5;
+      // localStorage.setItem("f",JSON.stringify(this.ver[0]));// guarda el nuevo puntaje.
       // this.usuarioLogeado = JSON.parse(local Storage.getItem("Usuarios")??"{}");
       // this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
       //  this.puntaje1 = this.loginservice.getPuntaje1();

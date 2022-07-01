@@ -24,11 +24,10 @@ export class RegistrarseComponent implements OnInit{
       this.miUsuario.puntaje3=0;
       let listaSerializada:string =localStorage.getItem("Usuarios")??"[]";
       let ListaUsuario:Array<Usuario> = JSON.parse(listaSerializada);
-      if(ListaUsuario.find((us)=>
-            us.nombre==this.miUsuario.nombre)==undefined){
-              ListaUsuario.push(this.miUsuario);
-              localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
-              this.route.navigateByUrl("login");
+      if(ListaUsuario.find((us)=>us.nombre==this.miUsuario.nombre)==undefined){
+            ListaUsuario.push(this.miUsuario);
+            localStorage.setItem("Usuarios",JSON.stringify(ListaUsuario))
+            this.route.navigateByUrl("login");
           }else{
             console.log( " usuario ya registrado ");}
 
