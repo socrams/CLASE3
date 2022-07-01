@@ -9,6 +9,7 @@ import { ListaProductoComponent } from './componentes/lista-producto/lista-produ
 import { LoginGuardGuard } from './componentes/login-guard.guard';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
+import { PremiumGuard } from './guard/premium.guard';
 import { PremiumComponent } from './premium/premium.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 // import { pathToFileURL } from 'url';
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path:'registrarse', component:RegistrarseComponent},
   {path:'estadisticas', component:EstadisticasComponent},
   {path: 'mijuego', component:AdivinarelnumeroComponent, canActivate:[LoginGuardGuard]},
-  {path: 'tictactoe', component:TableroComponent, canActivate:[LoginGuardGuard]},
+  {path: 'tictactoe', component:TableroComponent, canActivate:[PremiumGuard,LoginGuardGuard]},
   {path:'menu', component:MenuComponent},
   {path:'**', component:BienvenidosComponent},
 

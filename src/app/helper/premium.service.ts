@@ -4,6 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PremiumService {
+  public premium : boolean;
 
-  constructor() { }
+  constructor() {
+    this.premium = false; // traerlo del json con un parse de mierda igual q el login
+   }
+
+
+getStatePremium(){
+  return this.premium;
+}
+
 }

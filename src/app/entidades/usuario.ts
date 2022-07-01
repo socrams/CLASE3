@@ -6,4 +6,5 @@ export class Usuario {
     puntaje1: number = 0;
     puntaje2: number = 0;
     puntaje3: number = 0;
+    premium: boolean = false;
 }

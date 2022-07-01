@@ -1,20 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { PremiumService } from '../helper/premium.service';
+import {RouterLink } from '@angular/router';
 
+import { PremiumService } from '../helper/premium.service';
+RouterLink
 @Component({
   selector: 'app-premium',
   templateUrl: './premium.component.html',
   styleUrls: ['./premium.component.css']
 })
 export class PremiumComponent implements OnInit {
-  public premium: boolean = false ;
 
-  constructor(public servicio:PremiumService ) { }
 
-  servicios(){
-
+  constructor(public servicio:PremiumService ) {
+    this.servicio.premium=servicio.getStatePremium();
   }
 
+  getPremium(){
+    this.servicio.premium=true;
+  }
+  noPremium(){
+    this.servicio.premium=false;
+  }
+
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
   }
 
