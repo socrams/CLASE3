@@ -16,7 +16,6 @@ export class AdivinarelnumeroComponent  {
     public resultado: String = "";
     public sarasa: any = "Revelar Numero" ;
     unUsuario:Usuario;
-    ///
     todosLosUsuarios:Array<Usuario>
     posicion :any ;
 
@@ -24,16 +23,13 @@ export class AdivinarelnumeroComponent  {
       this.adivina = new Adivinaelnumero();
       this.todosLosUsuarios = JSON.parse(localStorage.getItem("Usuarios")??"[]");
       this.unUsuario = new Usuario();
-      
       // //public mensajeLogin : String = "";
     }
-
     // cargarPuntaje(){
     //   let usuario:Usuario|undefined =
     //   this.usuarioGuardado.find((us)=>this.unUsuario.usuario==us.usuario
     //   && us.pass == this.unUsuario.pass);
     // }
-
   comparar(){
     if (this.intentoDelUsuario == this. adivina.valor)
     {
@@ -44,14 +40,14 @@ export class AdivinarelnumeroComponent  {
       // localStorage.setItem("Puntaje",JSON.stringify(this.ver));
       //JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5; //tra puntaje suma 5.
       //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
+
       let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
-      
       this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario=="xx");
       //console.log(this.posicion);
       this.todosLosUsuarios[this.posicion].puntaje1=this.todosLosUsuarios[this.posicion].puntaje1+5;
       //console.log(this.todosLosUsuarios);
       localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));
-      
+      //
       // JSON.parse(localStorage.getItem("Usuarios")??"[]").splice(this.posicion,1,);
       //let i=JSON.parse(localStorage.getItem("Usuarios")??"[]").findIndex((t:any)=>t.usuario==nombreUsuarioLogeado).puntaje1;
       // this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario==nombreUsuarioLogeado)[0].puntaje1;
@@ -68,11 +64,11 @@ export class AdivinarelnumeroComponent  {
     }
    this.adivina.intentos++;
   }
+  
 
   getResultado(){
     // !this.adivina.result;
     this.sarasa = this.adivina.valor;
     return this.sarasa;
   }
-
 }

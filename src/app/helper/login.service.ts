@@ -8,10 +8,7 @@ export class LoginService {
   public estaLogeado : boolean;
   private usuarioLogeado: Usuario ;//| undefined
   public nombreUsuario: String = "" ;
-  public puntaje1: number = 0;
-
-
-
+  //public puntaje1: number = 0;
 
   constructor() {
       this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");

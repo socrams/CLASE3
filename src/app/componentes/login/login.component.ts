@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
     //   'nombre':['' ,[Validators.required],[Validators.min(5)]],
     //   'password':['',[Validators.required],]
     // })
-
   }
   
 
