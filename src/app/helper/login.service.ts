@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../entidades/usuario';
+import { PremiumService } from './premium.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class LoginService {
   public nombreUsuario: String = "" ;
   //public puntaje1: number = 0;
 
-  constructor() {
+  constructor(public premiumService:PremiumService) {
       this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
       this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../entidades/usuario';
-
+import { PremiumService } from '../helper/premium.service';
 @Component({
   selector: 'app-premium',
   templateUrl: './premium.component.html',
@@ -11,7 +11,7 @@ export class PremiumComponent implements OnInit {
   public todosLosUsuarios : Array<Usuario>;
   public nombreUsuarioLogeado : Usuario;
   
-  constructor(){
+  constructor() {
     this.todosLosUsuarios= JSON.parse(localStorage.getItem("Usuarios")??"[]");
     this.nombreUsuarioLogeado =JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
   }
