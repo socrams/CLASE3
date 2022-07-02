@@ -1,27 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import {RouterLink } from '@angular/router';
-import { LoginService } from '../helper/login.service';
-import { PremiumService } from '../helper/premium.service';
-RouterLink
+import { Usuario } from '../entidades/usuario';
+
 @Component({
   selector: 'app-premium',
   templateUrl: './premium.component.html',
   styleUrls: ['./premium.component.css']
 })
 export class PremiumComponent implements OnInit {
-   
-//
-
-
-
-  // unUsuario:Usuario;
-  // todosLosUsuarios:Array<Usuario>
-  // posicion :any ;
-  // nombreUsuarioLogeado;
+  public posicion:number = 0;
+  public todosLosUsuarios : Array<Usuario>;
+  public nombreUsuarioLogeado : Usuario;
   
-//
-  constructor(public servicio:PremiumService, public loginservice:LoginService){
-    
+  constructor(){
+    this.todosLosUsuarios= JSON.parse(localStorage.getItem("Usuarios")??"[]");
+    this.nombreUsuarioLogeado =JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
+  }
+  getPosicion(){
+    return this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==this.nombreUsuarioLogeado.nombre);
+  }
+  
+  addPremium(){                                                                                                                                                                                  
+   this.todosLosUsuarios[this.getPosicion()].premium=true;
+   this.ponerEnUsuario();  
+  }     
+
+  quitPremium(){
+    this.todosLosUsuarios[this.getPosicion()].premium=false;
+    this.ponerEnUsuario();
+  }
+  ponerEnUsuario(){
+    localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));
+  }
+  getPremium(){
+    return this.todosLosUsuarios[this.getPosicion()].premium;
   }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method

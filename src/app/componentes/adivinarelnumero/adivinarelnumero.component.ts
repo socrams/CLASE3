@@ -35,29 +35,14 @@ export class AdivinarelnumeroComponent  {
     {
       this.adivina.msj = "Acertaste, pulsa Start para jugar denuevo."
       this.adivina.intentos=-1;
-      //
-      // this.ver = JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5;
-      // localStorage.setItem("Puntaje",JSON.stringify(this.ver));
-      //JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any) => t.usuario==nombreUsuarioLogeado)[0].puntaje1+5; //tra puntaje suma 5.
-      //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
-
+      //      
       let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
       this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==nombreUsuarioLogeado);
       //console.log(this.posicion);
       this.todosLosUsuarios[this.posicion].puntaje1=this.todosLosUsuarios[this.posicion].puntaje1+5;
       //console.log(this.todosLosUsuarios);
       localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));
-      //
-      // JSON.parse(localStorage.getItem("Usuarios")??"[]").splice(this.posicion,1,);
-      //let i=JSON.parse(localStorage.getItem("Usuarios")??"[]").findIndex((t:any)=>t.usuario==nombreUsuarioLogeado).puntaje1;
-      // this.ver= JSON.parse(localStorage.getItem("Usuarios")??"[]").filter((t:any)=>t.usuario==nombreUsuarioLogeado)[0].puntaje1;
-      // this.ver[0].puntaje1 = this.ver[0].puntaje1 + 5;
-      // localStorage.setItem("f",JSON.stringify(this.ver[0]));// guarda el nuevo puntaje.
-      // this.usuarioLogeado = JSON.parse(local Storage.getItem("Usuarios")??"{}");
-      // this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
-      //  this.puntaje1 = this.loginservice.getPuntaje1();
-      //  this.puntaje1 = this.puntaje1+5;
-      //  this.loginservice.setPuntaje1(this.puntaje1);
+      
     }else
     {
       this.adivina.msj = "Fallaste, intentelo denuevo."
@@ -67,7 +52,6 @@ export class AdivinarelnumeroComponent  {
   
 
   getResultado(){
-    // !this.adivina.result;
     this.sarasa = this.adivina.valor;
     return this.sarasa;
   }

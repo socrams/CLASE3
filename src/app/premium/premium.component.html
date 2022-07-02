@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div class="row py-2 my-p2 text-large-right">
-  <h2 >Bienvenido: {{this.loginservice.getUsuarioLogeado()}}</h2>
+  <h2 >Bienvenido: {{nombreUsuarioLogeado.nombre}}</h2>
 
 </div>
 <div class="container" style="text-align: center;">
@@ -10,9 +10,9 @@
   </div>
     <!-- <a href="#contacts" class="btn-default btn2 scroll-to">Request free estimate</a> -->
   <div class="wrapper ">
-    <input class="option option-1"type="button" id="option-1"  value="SI">
-    <input class="option option-2" type="button" id="option-2"   value="NO">
-    <!-- (click)="quitPremium()"
-    (click)="addPremium()"  -->
+    <input class="option option-1" type="button" id="option-1"  value="SI" (click)="addPremium()" >
+    <input class="option option-2" type="button" id="option-2" value="NO"   (click)="quitPremium()" >
+    <!-- 
+    -->
   </div>
 </div>
