@@ -42,7 +42,7 @@ export class AdivinarelnumeroComponent  {
       //JSON.parse(localStorage.getItem("Usuarios")).filter(t=>t.usuario=="sss") // trae un user = al filtro.
 
       let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
-      this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario=="xx");
+      this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==nombreUsuarioLogeado);
       //console.log(this.posicion);
       this.todosLosUsuarios[this.posicion].puntaje1=this.todosLosUsuarios[this.posicion].puntaje1+5;
       //console.log(this.todosLosUsuarios);

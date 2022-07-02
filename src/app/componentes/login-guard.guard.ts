@@ -20,6 +20,5 @@ export class LoginGuardGuard implements CanActivate {
 
   constructor(public router:Router, public loginService:LoginService) {
  
-    
   }
 }

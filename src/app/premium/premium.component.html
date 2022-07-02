@@ -1,7 +1,18 @@
+<app-menu></app-menu>
 
-<label for="">¿ DESEA SER PREMIUM ? </label>
-<div>
-  <input type="button" value="NO" (click)="noPremium()" routerLink="/tictactoe">
-  <input type="button" value="SI" (click)="getPremium()" routerLink="/tictactoe">
+<div class="row py-2 my-p2 text-large-right">
+  <h2 >Bienvenido: {{this.loginservice.getUsuarioLogeado()}}</h2>
 
+</div>
+<div class="container" style="text-align: center;">
+  <div class="container" >
+  <h1 class="btn-default btn2">¿ DESEA SER PREMIUM ? </h1 >
+  </div>
+    <!-- <a href="#contacts" class="btn-default btn2 scroll-to">Request free estimate</a> -->
+  <div class="wrapper ">
+    <input class="option option-1"type="button" id="option-1"  value="SI">
+    <input class="option option-2" type="button" id="option-2"   value="NO">
+    <!-- (click)="quitPremium()"
+    (click)="addPremium()"  -->
+  </div>
 </div>

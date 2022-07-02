@@ -43,6 +43,10 @@ export class LoginService {
      localStorage.setItem("Puntos",JSON.stringify(this.usuarioLogeado));
    }
 
+  //  getPremium(){
+  //   return this.usuarioLogeado.premium;   
+  // }
+
 }
 
 
