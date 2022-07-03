@@ -7,26 +7,31 @@ import { Usuario } from '../entidades/usuario';
   providedIn: 'root'
 })
 export class PremiumService {
-  public estaPremium: boolean = false;
-  public usuarioObejo : Usuario;
-  // unUsuario:Usuario;
-  
 
+  // unUsuario:Usuario;
+  public estaPremium: boolean = false;
+  public usuarioGuardado : Usuario;
+public todosLosUsuarios : Array<Usuario>;
   // posicion :any ;
   // nombreUsuarioLogeado;
    
-  constructor(){
-    this.usuarioObejo = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}")[3].premium;
-    localStorage.setItem("usuarioLogeado",JSON.stringify(this.usuarioObejo));
-    this.estaPremium= false;
+  constructor( ){
+    this.todosLosUsuarios = JSON.parse(localStorage.getItem("Usuarios")??"[]");
+    this.usuarioGuardado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
+    let posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==this.usuarioGuardado.nombre);
+    this.usuarioGuardado.premium = this.todosLosUsuarios[posicion].premium
+    localStorage.setItem("usuarioLogeado",JSON.stringify(this.usuarioGuardado));
+  }    
+    getPremState(){
+      let x: Usuario = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
+      return  x.premium;
+    }
     //((this.usuarioObejo?.premium )??"")  != "";
-    
-    
     //public servicio:PremiumService, public loginservice:LoginService
     // this.todosLosUsuarios = JSON.parse(localStorage.getItem("Usuarios")??"[]");
     // this.unUsuario = new Usuario();
     // this.nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();  
-  }
+
 
   
 }

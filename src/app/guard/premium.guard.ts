@@ -7,16 +7,18 @@ import { PremiumService } from '../helper/premium.service';
   providedIn: 'root'
 })
 export class PremiumGuard implements CanActivate {
+  
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // if (this.premiumService.getPremium()!=true) {
-    //   this.router.navigateByUrl("login")
-    // } 
+      
+      if ( this.serv.getPremState() != true ) {
+            this.router.navigateByUrl("login")
+     } 
     return true;
   }
-  constructor(public router:Router, public premiumService:PremiumService) {
-
+  constructor(public serv:PremiumService, public router:Router) {
   }
-  
+
 }
+  

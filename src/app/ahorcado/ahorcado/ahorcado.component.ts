@@ -27,7 +27,7 @@ export class AhorcadoComponent implements OnInit  {
     .subscribe(resp => {
         this.miAhorcado.palabra=(resp[this.x = Math.floor(Math.random()*250)].translations.spa.common);
         this.espacios = this.miAhorcado.palabra.split('');
-     });
+     }); 
   }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method

@@ -11,7 +11,7 @@ export class PremiumComponent implements OnInit {
   public todosLosUsuarios : Array<Usuario>;
   public nombreUsuarioLogeado : Usuario;
   
-  constructor() {
+  constructor(public serv:PremiumService) {
     this.todosLosUsuarios= JSON.parse(localStorage.getItem("Usuarios")??"[]");
     this.nombreUsuarioLogeado =JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
   }
@@ -19,7 +19,7 @@ export class PremiumComponent implements OnInit {
     return this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==this.nombreUsuarioLogeado.nombre);
   }
   
-  addPremium(){                                                                                                                                                                                  
+  addPremium(){                                                                                                                                                                                   
    this.todosLosUsuarios[this.getPosicion()].premium=true;
    this.ponerEnUsuario();  
   }     
