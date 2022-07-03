@@ -1,17 +1,73 @@
 <app-menu></app-menu>
 <div class="container">
-    <div class="row">
+    <div>
         <div class="col-12 col-lg-auto">
-            <h1>Estadisticas</h1>
+            <br>
         </div>
     </div>
-  <div *ngFor="let us of usuarios; let odd=odd;let index=index">
-  <p [ngClass]="{'azul': odd, 'verde': !odd}">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">INDEX</th>
+                <th scope="col">USUARIO</th>
+                <th scope="col">PUNTAJE 1</th>
+            </tr>
+        </thead>
+        <tbody>
+            <div *ngFor="let us of usuarios; let odd=odd;let index=index">
+            <!-- <p [ngClass]="{'azul': odd, 'verde': !odd}"> -->
+        <!-- <tr scope = "row">
+            <tr>
+                <th scope="row">1</th>
+                <td>{{index}} </td>
+                <td>{{us.usuario}} </td>
+                <td>{{us.puntaje1}} </td>
+            </tr> -->
+            
+            <tr>
+                <th scope="row">1</th>
+                <td>MARK</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>     
+              
+        <!-- </p> -->
+        
+    
+            </div>
+    </tbody>
+</table>
 
-      {{index}}
-      {{us.usuario}}
-      {{us.puntaje1}}
-
-  </p>
-  </div>
 </div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
