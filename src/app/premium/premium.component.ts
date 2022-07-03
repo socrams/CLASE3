@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../entidades/usuario';
 import { PremiumService } from '../helper/premium.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-premium',
   templateUrl: './premium.component.html',
@@ -11,7 +13,7 @@ export class PremiumComponent implements OnInit {
   public todosLosUsuarios : Array<Usuario>;
   public nombreUsuarioLogeado : Usuario;
   
-  constructor(public serv:PremiumService) {
+  constructor(public route:Router, public serv:PremiumService) {
     this.todosLosUsuarios= JSON.parse(localStorage.getItem("Usuarios")??"[]");
     this.nombreUsuarioLogeado =JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
   }
@@ -21,12 +23,14 @@ export class PremiumComponent implements OnInit {
   
   addPremium(){                                                                                                                                                                                   
    this.todosLosUsuarios[this.getPosicion()].premium=true;
-   this.ponerEnUsuario();  
+   this.ponerEnUsuario(); 
+   this.route.navigateByUrl("listajuegos");
   }     
 
   quitPremium(){
     this.todosLosUsuarios[this.getPosicion()].premium=false;
     this.ponerEnUsuario();
+    this.route.navigateByUrl("listajuegos");
   }
   ponerEnUsuario(){
     localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));

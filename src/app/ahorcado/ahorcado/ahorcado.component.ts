@@ -40,7 +40,7 @@ export class AhorcadoComponent implements OnInit  {
       this.miAhorcado.letrasElegidas += ( (this.letra.toUpperCase()) + ' - ');
       this.letra='';
       this.mensaje='';
-      if (this.revisarCompleto()) {
+      if (this.revisarCompleto()!=false) {
         this.mensaje= "ganaste";
         //miUsuario.puntaje2 += 5;
       }
@@ -54,11 +54,10 @@ export class AhorcadoComponent implements OnInit  {
   revisarCompleto():boolean{
     var salida= true;
     this.espacios.forEach(element =>
-    { if (this.miAhorcado.letrasElegidas.indexOf(element)<=0)
-        salida = false;
-    });
+      { if (this.miAhorcado.letrasElegidas.indexOf(element)<=0)
+      salida = false;
+      });
     return salida;
-
   }
 
 

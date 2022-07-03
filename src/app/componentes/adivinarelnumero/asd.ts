@@ -1,19 +1,15 @@
-export
-public estaLogeado : boolean;
-private usuarioLogeado: Usuario ;//| undefined
-public nombreUsuario: String = "" ;
-public puntaje1: number = 0;
-
-const
-this.usuarioLogeado = JSON.parse(localStorage.getItem("UsuarioPuntos")??"{}").find((us)=>us.usuario==this.obtenerNombreUsuario());
-this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
+let nombreUsuarioLogeado = this.loginservice.getUsuarioLogeado();
+      this.posicion= this.todosLosUsuarios.findIndex((t:any)=>t.usuario==nombreUsuarioLogeado);
+      //console.log(this.posicion);
+      this.todosLosUsuarios[this.posicion].puntaje1=this.todosLosUsuarios[this.posicion].puntaje1+5;
+      //console.log(this.todosLosUsuarios);
+      localStorage.setItem("Usuarios",JSON.stringify(this.todosLosUsuarios));
 
 
-getPuntaje1(){
-    return this.usuarioLogeado.puntaje1;  
-}
 
-setPuntaje1(x:number){
-    this.usuarioLogeado.puntaje1=x;
-    localStorage.setItem("usuarioLogeado",JSON.stringify(this.usuarioLogeado));
-}
+      this.todosLosUsuarios = JSON.parse(localStorage.getItem("Usuarios")??"[]");
+
+
+
+      todosLosUsuarios:Array<Usuario>
+      posicion :any ;
