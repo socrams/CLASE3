@@ -9,65 +9,22 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">INDEX</th>
                 <th scope="col">USUARIO</th>
-                <th scope="col">PUNTAJE 1</th>
+                <th scope="col">ADIVINA</th>
+                <th scope="col">AHORCADO</th>
+                <th scope="col">TA-TE-TI</th>
             </tr>
         </thead>
         <tbody>
-            <div *ngFor="let us of usuarios; let odd=odd;let index=index">
-            <!-- <p [ngClass]="{'azul': odd, 'verde': !odd}"> -->
-        <!-- <tr scope = "row">
-            <tr>
-                <th scope="row">1</th>
-                <td>{{index}} </td>
-                <td>{{us.usuario}} </td>
+            <tr scope = "row"  *ngFor="let us of usuarios; let odd=odd;let index=index">  
+               
+                <th>{{index}} </th>
+                <td>{{us.usuario}}  </td>
                 <td>{{us.puntaje1}} </td>
-            </tr> -->
-            
-            <tr>
-                <th scope="row">1</th>
-                <td>MARK</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>     
-              
-        <!-- </p> -->
-        
-    
-            </div>
+                <td>{{us.puntaje2}} </td>
+                <td>{{us.puntaje3}} </td>
+            </tr>
     </tbody>
 </table>
 
 </div>
-
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>

@@ -9,9 +9,9 @@ import { Usuario } from 'src/app/entidades/usuario';
 export class EstadisticasComponent implements OnInit {
   usuarios:Array <Usuario>;
 
-  constructor() { this.usuarios=JSON.parse(localStorage.getItem("Usuarios")??'[]')
-
-}
+  constructor() { 
+    this.usuarios=JSON.parse(localStorage.getItem("Usuarios")??'[]')
+  }
 
 
 
