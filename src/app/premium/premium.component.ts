@@ -39,6 +39,7 @@ export class PremiumComponent implements OnInit {
     return this.todosLosUsuarios[this.getPosicion()].premium;
   }
 
+  
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
   }

@@ -1,17 +1,17 @@
 <app-menu></app-menu>
 
 <div class="row py-2 my-p2 text-large-right">
-  <h2 >Bienvenido: {{nombreUsuarioLogeado.nombre}}</h2>
-
+  <h2>Usuario: {{nombreUsuarioLogeado.nombre}}</h2>
 </div>
+
 <div class="container">
-  <div class="container r" >
-  <h1 class="btn-default btn2">¿ DESEA SER PREMIUM ? </h1 >
+  <div class="container r">
+    <h1 class="btn-default btn2">¿ DESEA SER PREMIUM ? </h1>
   </div>
-    <!-- <a href="#contacts" class="btn-default btn2 scroll-to">Request free estimate</a> -->
-  <div class="wrapper ">
-    <input class="option option-1" type="button" id="option-1"  value="SI" (click)="addPremium()" >
-    <input class="option option-2" type="button" id="option-2" value="NO"   (click)="quitPremium()" >
+  <!-- <a href="#contacts" class="btn-default btn2 scroll-to">Request free estimate</a> -->
+  <div class="wrapper container">
+    <input class="option option" type="button" id="option-1" value="SI" (click)="addPremium()">
+    <input class="option option" type="button" id="option-2" value="NO" (click)="quitPremium()">
     <!-- 
     -->
   </div>

@@ -22,7 +22,7 @@ public todosLosUsuarios : Array<Usuario>;
     this.usuarioGuardado.premium = this.todosLosUsuarios[posicion].premium
     localStorage.setItem("usuarioLogeado",JSON.stringify(this.usuarioGuardado));
   }    
-    getPremState(){
+    getPremState():boolean{
       let x: Usuario = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
       return  x.premium;
     }
