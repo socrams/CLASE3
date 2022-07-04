@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'tictactoe', component:TableroComponent, canActivate:[PremiumGuard]},
   {path:'menu', component:MenuComponent},
   {path:'**', component:BienvenidosComponent},
-
+  
 
 
 
