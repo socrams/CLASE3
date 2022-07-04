@@ -8,23 +8,35 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">USUARIO</th>
-                <th scope="col">ADIVINA</th>
-                <th scope="col">AHORCADO</th>
-                <th scope="col">TA-TE-TI</th>
+                <th class="col-lg-auto">#</th>
+                <th class="col-lg-auto">USUARIO</th>
+                <th class="col-lg-auto">ADIVINA</th>
+                <th class="col-lg-auto">AHORCADO</th>
+                <th class="col-lg-auto">
+                    TA-TE-TI
+                    <tr class = "row col">
+                        <td class="x col-6">x</td>
+                        <td class="x col-6">o</td>
+                    </tr>
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr scope = "row"  *ngFor="let us of usuarios; let odd=odd;let index=index">  
-               
+            <tr class = "r-col-lg-autoow"  *ngFor="let us of usuarios; let odd=odd;let index=index" [ngClass]="{'azul': odd, 'verde': !odd}" >
+             <!-- [ngClass]="{'azul': odd, 'verde': !odd}" -->
+             
                 <th>{{index}} </th>
                 <td>{{us.usuario}}  </td>
                 <td>{{us.puntaje1}} </td>
                 <td>{{us.puntaje2}} </td>
-                <td>{{us.puntaje3}} </td>
+                <!-- <td>{{us.puntaje3}} </td> -->
+                <td>
+                    <tr class = "row col">
+                        <td class="x col-6">{{us.puntaje3}}</td>
+                        <td class="x col-6">{{us.puntaje4}}</td>
+                    </tr>
+                </td>
             </tr>
     </tbody>
 </table>
-
 </div>

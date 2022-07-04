@@ -37,9 +37,11 @@ export class AhorcadoComponent implements OnInit {
 
   validar() {
     if (/[a-zA-Z]$/.test(this.letra)) {
-      this.miAhorcado.letrasElegidas += ((this.letra.toUpperCase()) + ' - ');
+    //   this.miAhorcado.letrasElegidas += ((this.letra.toUpperCase()) + ' - ');
+    this.miAhorcado.letrasElegidas += (this.letra.toUpperCase());
       this.letra = '';
       // this.mensaje='';
+      // if (this.revisarCompleto()) {
       if (this.revisarCompleto()) {
         this.mensaje = "Ganaste";
 
@@ -54,19 +56,22 @@ export class AhorcadoComponent implements OnInit {
   revisarCompleto(): boolean {
     var salida = true;
     this.espacios.forEach(element => {
-      if (this.miAhorcado.letrasElegidas.indexOf(element) >= 0) 
+      if (this.miAhorcado.letrasElegidas.indexOf(element) <= 0) 
       { salida = false }
-    }
-    
-    );
-
-
+    }  ); 
     return salida;
   }
 
+  juntarLetras() {
+    this.espacios.forEach(element => {
+      this.juntar += element;
+    }
+    );
+    return this.juntar;
+  }
+    
 
   contiene(pal: string): boolean {
     return this.miAhorcado.letrasElegidas.toLocaleLowerCase().indexOf(pal.toLocaleLowerCase()) >= 0;
   }
-
 }

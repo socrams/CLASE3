@@ -1,10 +1,17 @@
 .azul {
-    background-color:rgb(255, 0, 119);
+    background-color: rgb(64, 68, 64);
+    color: aliceblue;
       }
 .verde{
-    background-color: green;
+    background-color: rgb(192, 192, 192);
+
 }
 
 table, th, td {
+  text-align: center;
     border: 1px solid;
   }
+.x {
+  text-align: center;
+  border: 0px solid;
+}

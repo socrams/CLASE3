@@ -21,7 +21,8 @@ export class RegistrarseComponent implements OnInit{
     Registro(){
       this.miUsuario.puntaje1=0;
       this.miUsuario.puntaje2=0;
-      this.miUsuario.puntaje3=0;
+      this.miUsuario.puntaje3=0
+      this.miUsuario.puntaje4=0;
       let listaSerializada:string =localStorage.getItem("Usuarios")??"[]";
       let ListaUsuario:Array<Usuario> = JSON.parse(listaSerializada);
       if(ListaUsuario.find((us)=>us.nombre==this.miUsuario.nombre)==undefined){
