@@ -22,6 +22,9 @@ import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PremiumComponent } from './premium/premium.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 //import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -50,7 +53,9 @@ import { PremiumComponent } from './premium/premium.component';
     FormsModule,
     HttpClientModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

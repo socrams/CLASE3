@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "beltran-oggioni"
+  },
+  "targets": {
+    "beltran-oggioni": {
+      "hosting": {
+        "CLASE3": [
+          "beltran-oggioni"
+        ]
+      }
+    }
   }
 }
