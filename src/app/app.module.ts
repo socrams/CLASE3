@@ -18,14 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
-
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PremiumComponent } from './premium/premium.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+// import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 //import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -54,9 +55,11 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     HttpClientModule,
     CommonModule,
     RouterModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
-  ],
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore())
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

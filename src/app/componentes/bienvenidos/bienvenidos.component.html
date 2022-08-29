@@ -1,4 +1,13 @@
 <app-menu></app-menu>
+
+
+<input type="text" [(ngModel)]="textoMensaje" >
+<input type="button" value="Agregar" (click)="Agregar()" >
+<div class="container"
+      *ngFor="let item of coleccion">
+  {{item.texto}}
+</div> 
+
 <div align="center">
   <img src="https://filmdaily.co/wp-content/uploads/2020/11/freegame-lede-1-1300x800.jpg"  alt="Responsive image" class="img-fluid"  >
 </div>
