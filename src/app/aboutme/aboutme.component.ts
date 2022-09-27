@@ -12,6 +12,7 @@ export class AboutmeComponent implements OnInit {
   public avatar : any = '';
   public url : any = '';
   public x: any = '';
+  
   constructor(public gitService:AboutusService) {
 
     this.gitService.getGit().subscribe(resp => {

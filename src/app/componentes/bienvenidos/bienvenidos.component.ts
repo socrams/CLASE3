@@ -15,31 +15,8 @@ export class BienvenidosComponent implements OnInit
   public textoMensaje: string = "";
   public coleccion: Array<Mensaje> = new Array<Mensaje>();
   //
-  constructor(public firestoreApp: StorageService){  
-
-    this.usuario = sessionStorage.getItem("Usuario");
-   
-    //-
-    firestoreApp.traerColeccion().subscribe(t => {
-      this.coleccion = [];
-      (<Array<Mensaje>>t).forEach(element =>
-        this.coleccion.push(element)
-      )
-
-    });
-    //
-   }
-
-   Agregar() {
-    let mensajeAPasar: Mensaje = new Mensaje();
-    mensajeAPasar.texto = this.textoMensaje;
-    mensajeAPasar.usuario = "Ezequiel";
-    this.firestoreApp.setItem(mensajeAPasar);
-
-  }
-    
-    
-  
+  constructor(){  
+   }  
 
   ngOnInit(): void { 
     

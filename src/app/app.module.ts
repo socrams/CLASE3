@@ -27,6 +27,7 @@ import { environment } from '../environments/environment';
 //import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { ConectarComponent } from './componentes/conectar/conectar.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
     TableroComponent,
     CabezeraComponent,
     PremiumComponent,
+    ConectarComponent,
   ],
   imports: [
     BrowserModule,
