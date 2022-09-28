@@ -7,7 +7,8 @@ import { getAllJSDocTags, servicesVersion } from 'typescript';
 })
 export class ConectarService {
 
-  public url= 'http://localhost:8080';
+  // public url= 'http://localhost:8080';
+  public url= 'https://beltran-api.herokuapp.com/'
 
   constructor(public servicio:HttpClient) { }
 
