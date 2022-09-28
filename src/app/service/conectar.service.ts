@@ -19,7 +19,7 @@ export class ConectarService {
   }
 
   postData(){ //
-    return this.servicio.post(this.url+ "/identificador/",{'"nombre"':'"ffff"','"apellido"':'"aaaa"'});
+    return this.servicio.post(this.url+ "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
   }
 
 }
