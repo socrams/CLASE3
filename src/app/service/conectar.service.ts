@@ -13,13 +13,15 @@ export class ConectarService {
   constructor(public servicio:HttpClient) { }
 
   getData(){ //funciona traer, no enviar.
-    // return this.servicio.get(this.url+ "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
+   //return this.servicio.get(this.url+ "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
 
-    return this.servicio.get(this.url);
+   return this.servicio.get(this.url);
   }
 
   postData(){ //
-    return this.servicio.post(this.url+ "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
+    // return this.servicio.post(this.url + "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
+    return this.servicio.post(this.url + "/identificador/",{"nombre":"ffff","apellido":"aaaa"});
   }
+  //postApi?
 
 }

@@ -9,11 +9,12 @@ import { ConectarService } from 'src/app/service/conectar.service';
 })
 export class ConectarComponent implements OnInit {
   public respuesta : any; 
+  public envio : any; 
   constructor(public conectarService:ConectarService) { 
   
-    this.conectarService.getData().subscribe(t => this.respuesta=t );  //trae fuiona ok
+    //this.conectarService.getData().subscribe(t => this.respuesta=t );  //trae fuiona ok
 
-    this.conectarService.postData().subscribe(x => this.respuesta=x);  //envia
+    this.conectarService.postData().subscribe(x => this.envio=x);  //envia
   }
   
    
