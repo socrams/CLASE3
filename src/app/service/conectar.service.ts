@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class ConectarService {
 
-   public url= 'http://localhost:8080';
-  // public url= 'https://beltran-api.herokuapp.com'
+  //  public url= 'http://localhost:8080';
+  public url= 'https://beltran-api.herokuapp.com'
 
   constructor(public servicio:HttpClient) { }
 
