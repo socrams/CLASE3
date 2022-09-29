@@ -12,7 +12,7 @@ export class ConectarComponent implements OnInit {
   public envio : any; 
   constructor(public conectarService:ConectarService) { 
   
-    this.conectarService.getData().subscribe(t => this.respuesta=t );  //trae fuiona ok
+    // this.conectarService.getData().subscribe(t => this.respuesta=t );  //trae fuiona ok
 
     this.conectarService.postData().subscribe(x => this.envio=x);  //envia
   }
