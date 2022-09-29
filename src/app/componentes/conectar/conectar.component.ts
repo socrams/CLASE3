@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ConectarService } from 'src/app/service/conectar.service';
 
@@ -14,7 +13,8 @@ export class ConectarComponent implements OnInit {
   
     // this.conectarService.getData().subscribe(t => this.respuesta=t );  //trae fuiona ok
 
-    this.conectarService.postData().subscribe(x => this.envio=x);  //envia
+    this.conectarService.postData().subscribe
+        (x => this.envio=x); 
   }
   
    
