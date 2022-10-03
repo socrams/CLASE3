@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrarseComponent } from './componentes/registrarse/registrarse.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
@@ -28,6 +28,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ConectarComponent } from './componentes/conectar/conectar.component';
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideFirestore(() => getFirestore())
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ], 
   providers: [],
   bootstrap: [AppComponent]

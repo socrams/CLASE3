@@ -74,36 +74,35 @@
 
     <main class="form-signin w-100 m-auto">
       <!-- <form> -->
-        <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
+      <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <form (ngSubmit)="loginSupa()" [formGroup]="credenciales">
         <div class="form-floating">
-            <input class="form-control" placeholder="usuario" type= "text" [(ngModel)]="miUsuario.usuario" id="user">
-          <label for="floatingInput">Email address</label>
+          
+            <input class="form-control" placeholder="usuario" type="text" formControlName="email" [(ngModel)]="miUsuario.usuario" id="user">
+            <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-          <input class="form-control" placeholder="contraseña" type="password" [(ngModel)]="miUsuario.pass" id="pass">
+          <input class="form-control" placeholder="contraseña" type="password" formControlName="password"[(ngModel)]="miUsuario.pass" id="pass">
           <label for="floatingPassword">Password</label>
         </div>
-
-        <!-- <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
-      <div>
-        <h6><label>{{mensajeLogin}}</label>
-        </h6>
-      </div>
-        <input class="btn btn-danger " type="button" (click)="loguear()" value="Login">
-      <div>
-        <br>
-      <div>
-        <input type="button" (click)="loginHardCode()" value = "Logearse">
-      </div>    <a href="../registrarse">Registrarse</a>
+        <div>
+          <h6><label>{{mensajeLogin}}</label>
+          </h6>
         </div>
+        <input class="btn btn-danger " type="button" (click)="loguear()" value="Login">
+        <input class="btn btn-danger " type="submit" value="LoginSupa">
+        <div>
+          <br>
+          <div>
+            <input type="button" (click)="loginHardCode()" value="Logearse">
+          </div> <a href="../registrarse">Registrarse</a>
+          
+        </div>
+      </form>
       </main>
-
-
+      
+      
       </body>
-    </html>
+      
+      </html>
