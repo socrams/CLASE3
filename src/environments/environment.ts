@@ -3,10 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  
-  production: false,
-  supabaseUrl: 'https://filfcskyxdjbkboinpgy.supabase.co',//url api
-  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpbGZjc2t5eGRqYmtib2lucGd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQyODQxNjQsImV4cCI6MTk3OTg2MDE2NH0.0bd1ymr6OWq5hctQrQTR9poMZqJ8EDGDUt0WGrktY9M',
   firebase: {
     projectId: 'beltran-oggioni',
     appId: '1:205965517774:web:94207bee6eb23462d1419f',
@@ -18,6 +14,11 @@ export const environment = {
     messagingSenderId: '205965517774',
     measurementId: 'G-TEXX0Y7PQE',
   },
+  supabase:{
+  production: false,
+  supabaseUrl: 'https://filfcskyxdjbkboinpgy.supabase.co',//url api
+  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZpbGZjc2t5eGRqYmtib2lucGd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQyODQxNjQsImV4cCI6MTk3OTg2MDE2NH0.0bd1ymr6OWq5hctQrQTR9poMZqJ8EDGDUt0WGrktY9M',
+  }
 };
 
 /*

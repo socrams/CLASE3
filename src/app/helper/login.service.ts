@@ -22,7 +22,7 @@ export class LoginService {
     this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado") ?? "{}");
     this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
 
-    this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey, {
+    this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
       autoRefreshToken: true,
       persistSession: true,
     });
