@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController, LoadingController } from '@ionic/angular';
+import { Session } from 'inspector';
 import { Usuario } from 'src/app/entidades/usuario';
+import { LoginService } from 'src/app/helper/login.service';
 
 @Component({
   selector: 'app-registrarse',
@@ -8,14 +12,64 @@ import { Usuario } from 'src/app/entidades/usuario';
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit{
-
+  credenciales: FormGroup;
   miUsuario:Usuario;
 
-  constructor(public route:Router) {
+  constructor(public route:Router,
+    private loadingController: LoadingController,
+    private supabaseService: LoginService,
+    private alertController: AlertController,
+    private fb: FormBuilder,
+    ) {
 
     this.miUsuario=new Usuario;
+    this.credenciales = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      age: ['',[Validators.required]],
+      name: ['',[Validators.required]],
+    });  
 
    }
+
+   async registrarUsuario(){
+    const loading = await this.loadingController.create();
+    await loading.present();
+    
+    this.supabaseService.registrarUsuario(this.credenciales.value).then(async session => {
+      await loading.dismiss();
+      this.showError('Registro Completo', 'Por favor confirme su email ahora');
+    },async err => { 
+      await loading.dismiss();
+      const alert = await this.alertController.create({
+        header:'Registro fallido',
+        message: err.msg,
+        buttons: ['OK']
+      });
+      await alert.present();
+    });
+    
+  }
+
+  async showError(tittle: any, msg: any) {
+    const alert = await this.alertController.create({
+      header: tittle,
+      message: msg,
+      buttons :['OK'],
+    })
+    await alert.present();
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
     Registro(){

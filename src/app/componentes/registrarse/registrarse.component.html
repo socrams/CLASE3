@@ -7,47 +7,43 @@
 
 
 <app-menu></app-menu>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
 
-  </head>
-  <body class="text-center">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
 
-<main class="form-signin w-100 m-auto">
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin w-100 m-auto">
     <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please Register </h1>
+    <form (ngSubmit)="registrarUsuario()" [formGroup]="credenciales">
+      <div class="form-floating">
+        <input class="form-control" placeholder="nombre" type="text" [(ngModel)]="miUsuario.nombre">
+        <label for="floatingInput">Nombre</label>
+      </div>
 
-    <div class="form-floating">
-        <input class="form-control" placeholder= "nombre" type="text" [(ngModel)]="miUsuario.nombre">
-      <label for="floatingInput">Nombre</label>
-    </div>
+      <div class="form-floating">
+        <input class="form-control" placeholder="apellido" type="text" [(ngModel)]="miUsuario.apellido">
+        <label for="floatingPassword">Apellido</label>
+      </div>
 
-    <div class="form-floating">
-      <input class="form-control" placeholder= "apellido" type="text" [(ngModel)]="miUsuario.apellido">
-      <label for="floatingPassword">Apellido</label>
-    </div>
-
-    <div class="form-floating">
-        <input class="form-control" placeholder= "apellido" type= "text" [(ngModel)]="miUsuario.usuario">
+      <div class="form-floating">
+        <input class="form-control" placeholder="usuario" type="email" formControlName="email"
+          [(ngModel)]="miUsuario.usuario">
         <label for="floatingPassword">Usuario</label>
       </div>
 
       <div class="form-floating">
-        <input class="form-control" placeholder="contraseña" type="password" [(ngModel)]="miUsuario.pass" id="pass">
+        <input class="form-control" placeholder="contraseña" type="password" formControlName="password"
+          [(ngModel)]="miUsuario.pass" id="pass">
         <label for="floatingPassword">Password</label>
       </div>
-
-    <input class="btn btn-danger " type="button" (click)="Registro()" value="Registro">
-
-</main>
-
-
-
-  </body>
-</html>
+      <button type="submit">RegistrarSupabase</button>
+      <input class="btn btn-danger " type="button" (click)="Registro()" value="Registro">
+    </form>

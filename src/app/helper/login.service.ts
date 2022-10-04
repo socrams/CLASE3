@@ -54,6 +54,20 @@ export class LoginService {
     });
   }
 
+  async registrarUsuario(credenciales: {email: any, password: any } ){
+    return new Promise ( async (resolve, reject) => {
+      const { error, session } = await this.supabase.auth.signUp(credenciales)
+      if ( error ) { 
+        reject ( error );
+      }else{
+        resolve ( session );
+      }
+      });
+    }
+
+
+
+
   logearUsuario(usuario: Usuario) {
     this.usuarioLogeado = usuario;
     localStorage.setItem("usuarioLogeado", JSON.stringify(usuario));
