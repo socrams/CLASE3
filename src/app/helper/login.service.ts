@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../entidades/usuario';
+// import { SupabaseClient, createClient} from '@supabase/supabase-js';
+// import { BehaviorSubject } from 'rxjs';
+// import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -10,18 +13,52 @@ export class LoginService {
   private usuarioLogeado: Usuario ;//| undefined
   public nombreUsuario: String = "" ;
   //public puntaje1: number = 0;
+  // supabase:SupabaseClient;
+  // private _currentUser: BehaviorSubject<any> = new BehaviorSubject (null);
+  // private _todos: BehaviorSubject<any> = new BehaviorSubject ([]);
+
 
   constructor() {
       this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado")??"{}");
       this.estaLogeado = ((this.usuarioLogeado?.nombre)??"")  != "";
+
+      //  this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey,{
+      //    autoRefreshToken: true,
+      //    persistSession:true, 
+      //  });    
+  
+      // this.supabase.auth.onAuthStateChange(( event,session )=>{
+      //   // console.log('event ',event);
+      //   console.log('session: ', session);
+        
+  
+  
+      //   if (event == 'SIGNED_IN'){
+      //     this._currentUser.next(session?.user);
+      //   }else{
+      //     this._currentUser.next(false);
+      //   }
+      // });
+  }
+
+  ingresarUsuario() { //credenciales: { email:any, password:any}
+    // return new Promise ( async (resolve, reject) => {
+    //   const { error, session } = await this.supabase.auth.signIn(credenciales)
+    //   if ( error ) { 
+    //     reject ( error );
+    //   }else{
+    //     resolve ( session );
+    //   }
+    // });  
   }
 
   logearUsuario(usuario:Usuario){
     this.usuarioLogeado=usuario;
     localStorage.setItem("usuarioLogeado",JSON.stringify(usuario));
     this.nombreUsuario=usuario.nombre;
-  }
 
+  }
+  
   logout(){
     this.estaLogeado = false;
     localStorage.setItem("usuarioLogeado","{}");

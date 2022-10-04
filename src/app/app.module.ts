@@ -28,6 +28,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
+import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { ConectarComponent } from './componentes/conectar/conectar.component';
     // provideFirestore(() => getFirestore())
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonicModule.forRoot()
   ], 
   providers: [],
   bootstrap: [AppComponent]
