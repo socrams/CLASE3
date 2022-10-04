@@ -42,26 +42,24 @@
       </div>
     </form>  -->
 
-    viejo
     <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" 
     height="57">
     <form (ngSubmit)="loginSupa()" [formGroup]="credenciales">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
-          <input class="form-control" placeholder="usuario" type="text" formControlName="email">
+          <input class="form-control" placeholder="usuario" type="email" formControlName="email">
           <label for="floatingInput">Email address</label>
-        <!-- </div>
-        <div class="form-floating"> -->
+        </div>
+        <div class="form-floating">
           <input class="form-control" placeholder="contraseña" type="password" formControlName="password">
           <label for="floatingPassword">Password</label>
         </div>
-        <!-- <div>
-          <h6><label>{{mensajeLogin}}</label>
-          </h6>
-        </div> -->
+          <div>
+            <h6><label>{{mensajeLogin}}</label></h6>
+          </div>
         <button class="btn btn-danger" type="submit">Login</button>        
       </form>
-      <!-- <button (click)="mostrar()">test valor</button> -->
+      <button (click)="mostrar()">test valor</button>
       
       <div>
         <br>
