@@ -1,62 +1,29 @@
 <app-menu></app-menu>
-<!doctype html>
-<html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
-
 </head>
-
 <body class="text-center">
-
   <main class="form-signin w-100 m-auto">
-    <!-- <form>
-    <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      <div class="form-floating">
-        <input class="form-control" placeholder="usuario" type="text" formControlName="email"
-          [(ngModel)]="miUsuario.usuario" id="user">
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <input class="form-control" placeholder="contraseña" type="password" formControlName="password"
-          [(ngModel)]="miUsuario.pass" id="pass">
-        <label for="floatingPassword">Password</label>
-      </div>
-      <div>
-        <h6><label>{{mensajeLogin}}</label>
-        </h6>
-      </div>
-      <input class="btn btn-danger " type="button" (click)="loguear()" value="Login">
-      <input class="btn btn-danger " type="submit" value="LoginSupa">
-      <div>
-        <br>
-        <div>
-          <input type="button" (click)="loginHardCode()" value="Logearse">
-        </div> <a href="../registrarse">Registrarse</a>
-
-      </div>
-    </form>  -->
-
     <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" 
     height="57">
     <form (ngSubmit)="loginSupa()" [formGroup]="credenciales">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
-          <input class="form-control" placeholder="usuario" type="email" formControlName="email">
+          <input class="form-control" placeholder="usuario" type="text" formControlName="email">
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
           <input class="form-control" placeholder="contraseña" type="password" formControlName="password">
           <label for="floatingPassword">Password</label>
         </div>
-          <div>
-            <h6><label>{{mensajeLogin}}</label></h6>
-          </div>
+        <div>
+          <h6><label>{{mensajeLogin}}</label>
+          </h6>
+        </div>
         <button class="btn btn-danger" type="submit">Login</button>        
       </form>
       <button (click)="mostrar()">test valor</button>
@@ -65,10 +32,4 @@
         <br>
         <a href="../registrarse">Registrarse</a>
       </div>
-
-  </main>
-
-
-</body>
-
-</html>
+</main>

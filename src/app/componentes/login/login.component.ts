@@ -77,7 +77,11 @@ export class LoginComponent {
 
   }
   
-  mostrar(){}
+  mostrar(){
+    console.log(this.credenciales.value.password);
+    console.log(this.credenciales.value.email);
+    
+  }
 
   loginHardCode() {
     this.usuarioGuardado.find((us) => this.miUsuario.usuario = us.usuario);

@@ -29,6 +29,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { IonicModule } from '@ionic/angular';
+import { TestComponent } from './componentes/test/test.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { IonicModule } from '@ionic/angular';
     CabezeraComponent,
     PremiumComponent,
     ConectarComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
