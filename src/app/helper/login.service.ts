@@ -3,6 +3,8 @@ import { Usuario } from '../entidades/usuario';
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+
 
 
 @Injectable({
@@ -18,7 +20,9 @@ export class LoginService {
   private _todos: BehaviorSubject<any> = new BehaviorSubject([]);
 
 
-  constructor() {
+  constructor(public route:Router
+  ) {
+    this.usuarioLogeado = 
     this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado") ?? "{}");
     this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
 
@@ -41,11 +45,10 @@ export class LoginService {
     });
   }
 
-  ingresarUsuario(credenciales: { 
-                                  email: any, 
-                                  password: any }) {
+  ingresarUsuario(credenciales: { email: any, password: any }) {
     return new Promise(async (resolve, reject) => {
       const { error, session } = await this.supabase.auth.signIn(credenciales)
+      
       if (error) {
         reject(error);
       } else {
@@ -74,19 +77,30 @@ export class LoginService {
     this.nombreUsuario = usuario.nombre;
 
   }
+async passwordRecovery(mail:any){
+  await this.supabase.auth.api.resetPasswordForEmail(mail);
+}
+async logout() {
+    // this.estaLogeado = false;
+    // localStorage.setItem("usuarioLogeado", "{}");
+    // window.location.reload();
+    await this.supabase.auth.signOut();
 
-  logout() {
-    this.estaLogeado = false;
-    localStorage.setItem("usuarioLogeado", "{}");
-    window.location.reload();
+    this.supabase.getSubscriptions().map(sup => {
+      this.supabase.removeSubscription(sup);
+    });
+    this.route.navigateByUrl('/');
   }
+
 
   getUsuarioLogeado() {
-    return this.usuarioLogeado.nombre;
-  }
-
-  getEstaLogeado() {
-    return this.estaLogeado;
+    // return this.usuarioLogeado.nombre;    
+    return this.supabase.auth.user();
+    }
+  
+    getEstaLogeado() {
+    // return this.estaLogeado;
+    return this.supabase.auth.session()
   }
 
   getPuntaje1() {
@@ -101,6 +115,13 @@ export class LoginService {
   //   return this.usuarioLogeado.premium;   
   // }
 
+  async updateEmail(){
+    const { user, error } = await this.supabase.auth.update({email: 'new@email.com'})
+  }
+
+  async updatePassword(){
+    const { user, error } = await this.supabase.auth.update({password: 'new password'})
+  }
 }
 
 

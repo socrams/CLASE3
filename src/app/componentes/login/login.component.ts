@@ -15,7 +15,7 @@ export class LoginComponent {
 
   miUsuario: Usuario;
   public usuarioGuardado: Array<Usuario>;
-  public mensajeLogin: String = "";
+  // public mensajeLogin: String = "";
   credenciales: FormGroup;
   
   constructor(
@@ -25,7 +25,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private alertController: AlertController,
     private loadingController: LoadingController,
-    
+    public mail: String = "",
     
   ) 
   {
@@ -44,7 +44,7 @@ export class LoginComponent {
     
     this.supabaseService.ingresarUsuario(this.credenciales.value).then(async data => {
       await loading.dismiss();
-      this.route.navigateByUrl('/list', {replaceUrl:true}); // donde va luego de ingresar.
+      this.route.navigateByUrl('/listajuegos', {replaceUrl:true}); // donde va luego de ingresar.
     },async err => { 
       await loading.dismiss();
       this.showError('Carga Fallida',err.message); // msj sino logea bien
@@ -60,31 +60,33 @@ export class LoginComponent {
     await alert.present();
   }
 
-  loguear() {
+  // loguear() {
 
-    let usuario: Usuario | undefined =
-      this.usuarioGuardado.find((us) => this.miUsuario.usuario == us.usuario
-        && us.pass == this.miUsuario.pass);
+  //   let usuario: Usuario | undefined =
+  //     this.usuarioGuardado.find((us) => this.miUsuario.usuario == us.usuario
+  //       && us.pass == this.miUsuario.pass);
 
-    if (usuario) {
-      this.loginService.estaLogeado = true;
-      this.loginService.logearUsuario(usuario);
-      this.route.navigateByUrl("listajuegos")
-    }
-    else {
-      this.mensajeLogin = "Datos incorrectos, intente nuevamente."
-    }
+  //   if (usuario) {
+  //     this.loginService.estaLogeado = true;
+  //     this.loginService.logearUsuario(usuario);
+  //     this.route.navigateByUrl("listajuegos")
+  //   }
+  //   else {
+  //     this.mensajeLogin = "Datos incorrectos, intente nuevamente."
+  //   }
 
-  }
+  // }
   
   mostrar(){
     console.log(this.credenciales.value.password);
     console.log(this.credenciales.value.email);
     
   }
-
-  loginHardCode() {
-    this.usuarioGuardado.find((us) => this.miUsuario.usuario = us.usuario);
-    this.usuarioGuardado.find((us) => this.miUsuario.pass = us.pass);
+  passwordRecovery(){
+    return this.loginService.passwordRecovery(this.mail);
   }
+  // loginHardCode() {
+  //   this.usuarioGuardado.find((us) => this.miUsuario.usuario = us.usuario);
+  //   this.usuarioGuardado.find((us) => this.miUsuario.pass = us.pass);
+  // }
 }
