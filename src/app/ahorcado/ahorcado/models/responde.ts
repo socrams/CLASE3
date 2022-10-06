@@ -7,4 +7,3 @@ interface translations {
 interface common {
   common: string
 }
-

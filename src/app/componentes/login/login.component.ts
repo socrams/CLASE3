@@ -6,18 +6,20 @@ import { Usuario } from 'src/app/entidades/usuario';
 import { LoginService } from 'src/app/helper/login.service';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   miUsuario: Usuario;
   public usuarioGuardado: Array<Usuario>;
   // public mensajeLogin: String = "";
   credenciales: FormGroup;
-  
+  public mail: string = '';
+
   constructor(
     public route: Router,
     public loginService: LoginService,
@@ -25,7 +27,6 @@ export class LoginComponent {
     private fb: FormBuilder,
     private alertController: AlertController,
     private loadingController: LoadingController,
-    public mail: String = "",
     
   ) 
   {
@@ -33,21 +34,21 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    // console.log('x',supabaseService.getEstaLogeado);
+    
     this.miUsuario = new Usuario();
     this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios") ?? "[]");
-    
-    
   }
+
   async loginSupa() {
     const loading = await this.loadingController.create();
-    await loading.present();
-    
+    await loading.present();  
     this.supabaseService.ingresarUsuario(this.credenciales.value).then(async data => {
       await loading.dismiss();
-      this.route.navigateByUrl('/listajuegos', {replaceUrl:true}); // donde va luego de ingresar.
-    },async err => { 
+      this.route.navigateByUrl('/listajuegos', {replaceUrl:true});
+    }, async err => { 
       await loading.dismiss();
-      this.showError('Carga Fallida',err.message); // msj sino logea bien
+      this.showError('Carga Fallida',err.message);
     });
   }
 
@@ -60,6 +61,7 @@ export class LoginComponent {
     await alert.present();
   }
 
+  
   // loguear() {
 
   //   let usuario: Usuario | undefined =
@@ -78,15 +80,24 @@ export class LoginComponent {
   // }
   
   mostrar(){
-    console.log(this.credenciales.value.password);
-    console.log(this.credenciales.value.email);
+    console.log('pass: ',this.credenciales.value.password);
+    console.log('email: ',this.credenciales.value.email);
+    console.log('token: ',this.supabaseService.getEstaLogeado());
+    
     
   }
   passwordRecovery(){
     return this.loginService.passwordRecovery(this.mail);
   }
-  // loginHardCode() {
+  
+  // logeado(){
+  //   let storage = JSON.parse(localStorage.getItem("supabase.auth.token") ?? "[]");
+  // }
+  ngOnInit(): void {
+  }
+}
+
+// loginHardCode() {
   //   this.usuarioGuardado.find((us) => this.miUsuario.usuario = us.usuario);
   //   this.usuarioGuardado.find((us) => this.miUsuario.pass = us.pass);
   // }
-}

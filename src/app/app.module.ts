@@ -55,6 +55,7 @@ import { TestComponent } from './componentes/test/test.component';
     TestComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

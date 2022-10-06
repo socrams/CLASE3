@@ -22,28 +22,31 @@
   <main class="form-signin w-100 m-auto">
     <img class="mb-4" src="http://www.inv-lizsl.com/sistema/img/login.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please Register </h1>
+
     <form (ngSubmit)="registrarUsuario()" [formGroup]="credenciales">
       <div class="form-floating">
-        <input class="form-control" placeholder="nombre" type="text" [(ngModel)]="miUsuario.nombre">
+        <input class="form-control" placeholder="nombre" type="text" formControlName="nombre">
+        <!-- [(ngModel)]="miUsuario.nombre" -->
         <label for="floatingInput">Nombre</label>
       </div>
 
       <div class="form-floating">
-        <input class="form-control" placeholder="apellido" type="text" [(ngModel)]="miUsuario.apellido">
+        <input class="form-control" placeholder="apellido" type="text" formControlName="apellido">
+        <!-- [(ngModel)]="miUsuario.apellido" -->
         <label for="floatingPassword">Apellido</label>
       </div>
 
       <div class="form-floating">
-        <input class="form-control" placeholder="usuario" type="email" formControlName="email"
-          [(ngModel)]="miUsuario.usuario">
+        <input class="form-control" placeholder="mail" type="email" formControlName="email">
+          <!-- [(ngModel)]="miUsuario.usuario"> -->
         <label for="floatingPassword">Usuario</label>
       </div>
 
       <div class="form-floating">
-        <input class="form-control" placeholder="contraseña" type="password" formControlName="password"
-          [(ngModel)]="miUsuario.pass" id="pass">
+        <input class="form-control" placeholder="contraseña" type="password" formControlName="password">
+          <!-- [(ngModel)]="miUsuario.pass" id="pass"> -->
         <label for="floatingPassword">Password</label>
       </div>
-      <button type="submit">RegistrarSupabase</button>
-      <input class="btn btn-danger " type="button" (click)="Registro()" value="Registro">
+      <!-- <input class="btn btn-danger " type="button" (click)="Registro()" value="Registro"> -->
+    <button class="btn btn-danger " type="submit">Reg supa</button>
     </form>

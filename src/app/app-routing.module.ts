@@ -14,11 +14,11 @@ import { PremiumComponent } from './premium/premium.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { LoginComponent } from './componentes/login/login.component';
+
+
 // import { pathToFileURL } from 'url';
 // import { LoginModule } from './login/login.module';
-// import { Adivinaelnumero } from './entidades/adivinaelnumero';
 // import { ProductoComponent } from './componentes/producto/producto.component';
-// import { LoginComponent } from './componentes/login/login.component';
 // import { Component } from '@angular/core';
 
 const routes: Routes = [
@@ -29,8 +29,8 @@ const routes: Routes = [
   {path: 'aboutme', component:AboutmeComponent},
   {path: 'listajuegos', component:ListaProductoComponent, canActivate:[LoginGuardGuard]},
   {path: 'ahorcado', component:AhorcadoComponent, canActivate:[LoginGuardGuard]},
-  // {path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},
-  {path:'login', component:LoginComponent},
+  //{path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},
+  {path: 'login', component:LoginComponent},
   {path:'registrarse', component:RegistrarseComponent},
   {path:'estadisticas', component:EstadisticasComponent},
   {path: 'mijuego', component:AdivinarelnumeroComponent, canActivate:[LoginGuardGuard]},

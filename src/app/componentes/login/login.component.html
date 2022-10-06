@@ -13,7 +13,7 @@
     <form (ngSubmit)="loginSupa()" [formGroup]="credenciales">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
-          <input class="form-control" placeholder="usuario" type="text" formControlName="email">
+          <input class="form-control" placeholder="mail" type="text" formControlName="email">
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
@@ -33,8 +33,8 @@
         <br>
         <a href="../registrarse">Registrarse</a>
       </div>
-      <!-- <div>
+      <div class="container ">
         <input type="text" [(ngModel)]="mail">
-        <button (click)="passwordRecovery()">reset password</button>
-      </div> -->
+        <button class="btn btn-danger" (click)="passwordRecovery()">reset password</button>
+      </div>
 </main>

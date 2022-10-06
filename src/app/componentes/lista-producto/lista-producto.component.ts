@@ -31,7 +31,7 @@ export class ListaProductoComponent implements OnInit {
     titulo: "Ta-Te-Ti", url:'tictactoe' });
     // }
      this.nuevoProducto = new Producto();
-    this.loginService.estaLogeado;
+    // this.loginService.estaLogeado;
     // let x = this.mostrarFunction();
   }
   // mostrarFunction(){

@@ -5,26 +5,29 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
+import { locals } from "../helper/format";
+
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  public estaLogeado: boolean;
+  // public estaLogeado: boolean;
   private usuarioLogeado: Usuario;
   public nombreUsuario: String = "";
   public puntaje1: number = 0;
   supabase: SupabaseClient;
   private _currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
   private _todos: BehaviorSubject<any> = new BehaviorSubject([]);
-
+  
 
   constructor(public route:Router
   ) {
     this.usuarioLogeado = 
     this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado") ?? "{}");
-    this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
+    // this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
 
     this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
       autoRefreshToken: true,
@@ -33,10 +36,7 @@ export class LoginService {
 
     this.supabase.auth.onAuthStateChange((event, session) => {
       console.log('event ', event);
-      console.log('session: ', session);
-
-
-
+     console.log('session: ', session);
       if (event == 'SIGNED_IN') {
         this._currentUser.next(session?.user);
       } else {
@@ -85,7 +85,6 @@ async logout() {
     // localStorage.setItem("usuarioLogeado", "{}");
     // window.location.reload();
     await this.supabase.auth.signOut();
-
     this.supabase.getSubscriptions().map(sup => {
       this.supabase.removeSubscription(sup);
     });
@@ -97,11 +96,19 @@ async logout() {
     // return this.usuarioLogeado.nombre;    
     return this.supabase.auth.user();
     }
-  
-    getEstaLogeado() {
-    // return this.estaLogeado;
-    return this.supabase.auth.session()
-  }
+
+
+
+    getEstaLogeado():boolean{
+    //return this.estaLogeado;
+    //return x.currentSession.access_token;
+    let x:locals;
+    if (JSON.parse(localStorage.getItem("supabase.auth.token")??"[]") != ""){
+        return true;
+      }else{
+        return false;
+      }
+    }
 
   getPuntaje1() {
     return this.usuarioLogeado.puntaje1;
@@ -122,6 +129,8 @@ async logout() {
   async updatePassword(){
     const { user, error } = await this.supabase.auth.update({password: 'new password'})
   }
+
+
 }
 
 

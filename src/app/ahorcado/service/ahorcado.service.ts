@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Welcome } from "../ahorcado/models/responde";
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
