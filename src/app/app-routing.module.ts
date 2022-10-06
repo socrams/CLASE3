@@ -14,6 +14,8 @@ import { PremiumComponent } from './premium/premium.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { pathToFileURL } from 'url';
+import { ChatComponent } from './componentes/chat/chat.component';
 
 
 // import { pathToFileURL } from 'url';
@@ -27,6 +29,7 @@ const routes: Routes = [
   {path:'conectar', component:ConectarComponent},
   {path:'premium', component:PremiumComponent , canActivate:[LoginGuardGuard]},  
   {path: 'aboutme', component:AboutmeComponent},
+  {path: 'chat', component:ChatComponent},
   {path: 'listajuegos', component:ListaProductoComponent, canActivate:[LoginGuardGuard]},
   {path: 'ahorcado', component:AhorcadoComponent, canActivate:[LoginGuardGuard]},
   //{path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},

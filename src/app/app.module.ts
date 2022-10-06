@@ -30,6 +30,7 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { IonicModule } from '@ionic/angular';
 import { TestComponent } from './componentes/test/test.component';
+import { ChatComponent } from './componentes/chat/chat.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { TestComponent } from './componentes/test/test.component';
     PremiumComponent,
     ConectarComponent,
     TestComponent,
+    ChatComponent,
   ],
   imports: [
     ReactiveFormsModule,

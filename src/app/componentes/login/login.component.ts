@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/helper/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   miUsuario: Usuario;
   public usuarioGuardado: Array<Usuario>;
@@ -93,8 +93,7 @@ export class LoginComponent implements OnInit {
   // logeado(){
   //   let storage = JSON.parse(localStorage.getItem("supabase.auth.token") ?? "[]");
   // }
-  ngOnInit(): void {
-  }
+  
 }
 
 // loginHardCode() {
