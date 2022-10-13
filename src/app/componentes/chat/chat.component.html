@@ -1,20 +1,28 @@
-<main>
-    <h1>Chat</h1>
-    <h2>Posteos</h2>
-    <div class="container">
-    <form action="">
-        <input type="text" placeholder="Title" name="Title" [(ngModel)]='titleInput'>
-        <textarea name="content" id="content" cols="30" rows="10" [(ngModel)]='x'></textarea>
-        <button (click)="enviarPost()">Enviar</button>
-    </form>
-    </div>
-    <button (click)="rellenarChat()">chat</button>
-</main>
+<app-menu></app-menu>
+<body>
+    <div id="wrapper">
+        <div id="menu">
+            <p class="welcome">
+                <i class='fa fa-commenting-o'></i>
+                <b>
 
-<!-- <div style="background-color: red;">
-    <tr *ngFor="let data of lists">
-        <td >{{data.user}}</td><br>
-        <td >{{data.Titulo}}</td>
-        
-    </tr>
-</div> -->
+                </b>
+            </p>
+        </div>
+        <div id="chatbox">
+            <div class="Izquierda"></div>
+            <div class="derecha">
+                <tr *ngFor="let data of ArrayComentarios">
+                    <td>{{data}}</td>
+                </tr>
+            </div>
+
+        </div>
+
+        <form name="message" action="">
+            <input name="usermsg" type="text" id="usermsg" [(ngModel)]='comentarios' autocomplete="off" />
+            <button ng (click)="insertarNew()" ng (click)="limpiar()" class="btn btn-primary">Enviar<i
+                    class='fa fa-send'></i></button>
+
+
+        </form>

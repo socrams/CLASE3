@@ -1,6 +1,7 @@
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { Component, OnInit } from '@angular/core';
 import {createClient, SupabaseClient } from '@supabase/supabase-js';
+import { json } from 'express';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -9,18 +10,24 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  titleInput: string ="";
+  comentarios: string ="";
   messages: string ="";
-  lists: any[] = [];
+  ArrayComentarios: any[] = [];
   x : any;
+  loqsea: any;
+  
   supabase:SupabaseClient;
   
   constructor() { 
     this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey)
+    
   }
-  enviarPost(){
-
+  insertarNew(){
 }
+limpiar(){}
+
+
+
 
 async rellenarChat(){
   let { data: menssages } = await this.supabase
@@ -28,7 +35,9 @@ async rellenarChat(){
   .select('content')
   
   console.log('mensajes: ', menssages);
-  this.x= data.menssages;
+  this.x = menssages;
+  this.loqsea.content = JSON.stringify(this.x);
+  
   
 }
 
