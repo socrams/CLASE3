@@ -16,8 +16,8 @@ import { locals } from "../helper/format";
 export class LoginService {
   // public estaLogeado: boolean;
   // private usuarioLogeado: Usuario;
-  public nombreUsuario: String = "";
-  public puntaje1: number = 0;
+  // public nombreUsuario: String = "";
+  // public puntaje1: number = 0;
   supabase: SupabaseClient;
   private _currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
   private _todos: BehaviorSubject<any> = new BehaviorSubject([]);
@@ -30,13 +30,13 @@ export class LoginService {
     // this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
 
     this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
-      autoRefreshToken: true,
-      persistSession: true,
+      // autoRefreshToken: true,
+      // persistSession: true,
     });
 
     this.supabase.auth.onAuthStateChange((event, session) => {
       console.log('event ', event);
-     console.log('session: ', session);
+      console.log('session: ', session);
       if (event == 'SIGNED_IN') {
         this._currentUser.next(session?.user);
       } else {
@@ -57,13 +57,14 @@ export class LoginService {
     });
   }
 
-  async datosUsuario(){
-    const { data, error } = await this.supabase.from('profiles')
+  async datosUsuario(credenciales:{email:any, nombre:any, apellido:any}){      
+    const supabase =  createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey);
+    const { error } = await supabase
+    .from('profiles')
     .insert([
-    {nombre: 'nico',apellido: 'marcos'},
-  ])
-  console.log('err:', error);
-  console.log('user:', this.supabase.auth.user()?.id);
+    { nombre: credenciales.nombre,apellido: credenciales.apellido, mail:credenciales.email},
+  ])  
+  // console.log('puto error:', error);
   }
 
   async registrarUsuario(credenciales: {email: any, password: any, nombre:any, apellido:any } ){
@@ -72,17 +73,13 @@ export class LoginService {
       if ( error ) { 
         reject ( error );
       }else{
-
         resolve ( session );
+        this.datosUsuario(credenciales);
       }
       });
     }
 
-async borrar(){
-  let { data: profiles, error } = await this.supabase
-  .from('profiles')
-  .select('id')
-}
+
 
 
 

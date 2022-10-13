@@ -31,7 +31,7 @@ export class RegistrarseComponent implements OnInit {
   }
 
   pasarDatos(){
-    return this.supabaseService.datosUsuario()
+    return this.supabaseService.datosUsuario(this.credenciales.value)
   }
 
   async registrarUsuario() {
