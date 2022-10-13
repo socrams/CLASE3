@@ -15,7 +15,7 @@ import { locals } from "../helper/format";
 })
 export class LoginService {
   // public estaLogeado: boolean;
-  private usuarioLogeado: Usuario;
+  // private usuarioLogeado: Usuario;
   public nombreUsuario: String = "";
   public puntaje1: number = 0;
   supabase: SupabaseClient;
@@ -25,8 +25,8 @@ export class LoginService {
 
   constructor(public route:Router
   ) {
-    this.usuarioLogeado = 
-    this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado") ?? "{}");
+    // this.usuarioLogeado = 
+    // this.usuarioLogeado = JSON.parse(localStorage.getItem("usuarioLogeado") ?? "{}");
     // this.estaLogeado = ((this.usuarioLogeado?.nombre) ?? "") != "";
 
     this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
@@ -57,26 +57,41 @@ export class LoginService {
     });
   }
 
-  async registrarUsuario(credenciales: {email: any, password: any } ){
+  async datosUsuario(){
+    const { data, error } = await this.supabase.from('profiles')
+    .insert([
+    {nombre: 'nico',apellido: 'marcos'},
+  ])
+  console.log('err:', error);
+  console.log('user:', this.supabase.auth.user()?.id);
+  }
+
+  async registrarUsuario(credenciales: {email: any, password: any, nombre:any, apellido:any } ){
     return new Promise ( async (resolve, reject) => {
       const { error, session } = await this.supabase.auth.signUp(credenciales)
       if ( error ) { 
         reject ( error );
       }else{
+
         resolve ( session );
       }
       });
     }
 
+async borrar(){
+  let { data: profiles, error } = await this.supabase
+  .from('profiles')
+  .select('id')
+}
 
 
 
-  logearUsuario(usuario: Usuario) {
-    this.usuarioLogeado = usuario;
-    localStorage.setItem("usuarioLogeado", JSON.stringify(usuario));
-    this.nombreUsuario = usuario.nombre;
+  // logearUsuario(usuario: Usuario) {
+  //   this.usuarioLogeado = usuario;
+  //   localStorage.setItem("usuarioLogeado", JSON.stringify(usuario));
+  //   this.nombreUsuario = usuario.nombre;
 
-  }
+  // }
 async passwordRecovery(mail:any){
   await this.supabase.auth.api.resetPasswordForEmail(mail);
 }
@@ -94,6 +109,7 @@ async logout() {
 
   getUsuarioLogeado() {
     // return this.usuarioLogeado.nombre;    
+    
     return this.supabase.auth.user();
     }
 
@@ -111,11 +127,11 @@ async logout() {
     }
 
   getPuntaje1() {
-    return this.usuarioLogeado.puntaje1;
+    // return this.usuarioLogeado.puntaje1;
   }
   setPuntaje1(x: number) {
-    this.usuarioLogeado.puntaje1 = x;
-    localStorage.setItem("Puntos", JSON.stringify(this.usuarioLogeado));
+    // this.usuarioLogeado.puntaje1 = x;
+    // localStorage.setItem("Puntos", JSON.stringify(this.usuarioLogeado));
   }
 
   //  getPremium(){

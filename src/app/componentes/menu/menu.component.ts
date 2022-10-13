@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   stadoLogin: boolean = false;
 
   constructor(public loginService: LoginService ) {
-    // this.stadoLogin = loginService.getEstaLogeado();
+    this.stadoLogin = loginService.getEstaLogeado();
     //volver a activar estado dell ogin.
   }
 

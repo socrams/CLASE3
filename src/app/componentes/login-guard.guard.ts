@@ -14,15 +14,17 @@ export class LoginGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      // if(!this.loginService.estaLogeado){
-      //   this.router.navigateByUrl("login")        
-      // } 
-      // if(this.loginService.getEstaLogeado()){
-      //   return true;
-      // }else{
-      //   return false;
-      // }
-        return true;
+      //  if(!this.loginService.estaLogeado){
+      //    this.router.navigateByUrl("login")        
+      //  } 
+       if(this.loginService.getEstaLogeado()){
+         return true;
+       }else{
+        this.router.navigateByUrl("login")
+         return false;
+         
+       }
+        // return true;
     }
 
   constructor(public router:Router, public loginService:LoginService) {

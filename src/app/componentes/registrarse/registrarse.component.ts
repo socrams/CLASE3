@@ -30,6 +30,10 @@ export class RegistrarseComponent implements OnInit {
     });
   }
 
+  pasarDatos(){
+    return this.supabaseService.datosUsuario()
+  }
+
   async registrarUsuario() {
 
     const loading = await this.loadingController.create();
