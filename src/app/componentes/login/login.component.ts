@@ -65,8 +65,6 @@ export class LoginComponent {
     console.log('pass: ',this.credenciales.value.password);
     console.log('email: ',this.credenciales.value.email);
     console.log('token: ',this.supabaseService.getEstaLogeado());
-    
-    
   }
   passwordRecovery(){
     return this.loginService.passwordRecovery(this.mail);
