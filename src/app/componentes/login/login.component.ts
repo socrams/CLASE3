@@ -14,8 +14,8 @@ import { LoginService } from 'src/app/helper/login.service';
 })
 export class LoginComponent {
 
-  miUsuario: Usuario;
-  public usuarioGuardado: Array<Usuario>;
+  // miUsuario: Usuario;
+  // public usuarioGuardado: Array<Usuario>;
  
   credenciales: FormGroup;
   public mail: string = '';
