@@ -16,7 +16,7 @@ export class LoginComponent {
 
   miUsuario: Usuario;
   public usuarioGuardado: Array<Usuario>;
-  // public mensajeLogin: String = "";
+ 
   credenciales: FormGroup;
   public mail: string = '';
 
@@ -33,11 +33,9 @@ export class LoginComponent {
     this.credenciales = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
-    });
-    // console.log('x',supabaseService.getEstaLogeado);
-    
-    this.miUsuario = new Usuario();
-    this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios") ?? "[]");
+    });    
+    // this.miUsuario = new Usuario();
+    // this.usuarioGuardado = JSON.parse(localStorage.getItem("Usuarios") ?? "[]");
   }
 
   async loginSupa() {
@@ -62,22 +60,6 @@ export class LoginComponent {
   }
 
   
-  // loguear() {
-
-  //   let usuario: Usuario | undefined =
-  //     this.usuarioGuardado.find((us) => this.miUsuario.usuario == us.usuario
-  //       && us.pass == this.miUsuario.pass);
-
-  //   if (usuario) {
-  //     this.loginService.estaLogeado = true;
-  //     this.loginService.logearUsuario(usuario);
-  //     this.route.navigateByUrl("listajuegos")
-  //   }
-  //   else {
-  //     this.mensajeLogin = "Datos incorrectos, intente nuevamente."
-  //   }
-
-  // }
   
   mostrar(){
     console.log('pass: ',this.credenciales.value.password);
@@ -90,13 +72,29 @@ export class LoginComponent {
     return this.loginService.passwordRecovery(this.mail);
   }
   
-  // logeado(){
-  //   let storage = JSON.parse(localStorage.getItem("supabase.auth.token") ?? "[]");
-  // }
   
 }
 
+// logeado(){
+  //   let storage = JSON.parse(localStorage.getItem("supabase.auth.token") ?? "[]");
+// }
 // loginHardCode() {
   //   this.usuarioGuardado.find((us) => this.miUsuario.usuario = us.usuario);
   //   this.usuarioGuardado.find((us) => this.miUsuario.pass = us.pass);
+  // }
+  // loguear() {
+  
+  //   let usuario: Usuario | undefined =
+  //     this.usuarioGuardado.find((us) => this.miUsuario.usuario == us.usuario
+  //       && us.pass == this.miUsuario.pass);
+  
+  //   if (usuario) {
+  //     this.loginService.estaLogeado = true;
+  //     this.loginService.logearUsuario(usuario);
+  //     this.route.navigateByUrl("listajuegos")
+  //   }
+  //   else {
+  //     this.mensajeLogin = "Datos incorrectos, intente nuevamente."
+  //   }
+  
   // }
