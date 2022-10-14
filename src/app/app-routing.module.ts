@@ -25,7 +25,7 @@ import { ChatComponent } from './componentes/chat/chat.component';
 
 const routes: Routes = [
 
-  {path:'pos', component:BienvenidosComponent},
+  {path:'', component:BienvenidosComponent},
   {path:'conectar', component:ConectarComponent},
   {path:'premium', component:PremiumComponent , canActivate:[LoginGuardGuard]},  
   {path: 'aboutme', component:AboutmeComponent},
