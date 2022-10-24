@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import {createClient, SupabaseClient } from '@supabase/supabase-js';
+import {createClient, } from '@supabase/supabase-js';
 import { LoginService } from 'src/app/helper/login.service';
 import { environment } from 'src/environments/environment';
 
@@ -32,9 +31,13 @@ export class ChatComponent implements OnInit {
   chats = this.supabaseService.chat;
   public supabase : any;
   public mailLocal : string = '';
+  public elemento:any;
   constructor(private supabaseService: LoginService) {
+    
   }
-  
+  async ordenar(){
+    this.elemento = await document.getElementById('app-mensajes')?.scrollTo();
+  }
   async enviarMessage() {
     const supabase = createClient(environment.supabaseUrl,environment.supabaseKey)
     const {data, error } = await  supabase
@@ -46,29 +49,26 @@ export class ChatComponent implements OnInit {
   }
   mensajes(){
     const email:CurrentSession = JSON.parse(localStorage.getItem('supabase.auth.token')?? "[]");
-    // const email:CurrentSession = this.supabase.auth.user()?.token ;
-    //console.log('email: ',email.currentSession.user.email);
     this.mailLocal = email.currentSession.user.email;
   }
   salir(){
     this.supabaseService.logout();
   }
-  leer(){
-    this.chats.forEach(chat => {
-      console.log(chat);
-      
-    });
-  }
+
   ngOnInit():void{
     this.mensajes();
+    this.ordenar();
+  }
+  altura(){
+    console.log( this.elemento.getElementById("app-mensajes").scrollHeight);
   }
 }
 
 //   async rellenarChat(){
   //     let { data: menssages } = await this.supabase
   //   .from('menssages')
-//   .select('content')
-
+  //   .select('content')
+  
 //   console.log('mensajes: ', menssages);
 //   this.x = menssages;
 //   this.loqsea.content = JSON.stringify(this.x);
@@ -83,3 +83,5 @@ export class ChatComponent implements OnInit {
 // loqsea: any;
 
 // supabase:SupabaseClient;
+// const email:CurrentSession = this.supabase.auth.user()?.token ;
+//console.log('email: ',email.currentSession.user.email);

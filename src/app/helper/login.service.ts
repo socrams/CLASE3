@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 import { locals } from "../helper/format";
+import { ChatComponent } from '../componentes/chat/chat.component';
 
 export interface Chat {
   id: number;
@@ -23,9 +24,8 @@ export class LoginService {
   private _currentUser: BehaviorSubject<any> = new BehaviorSubject(null);
   private _chat: BehaviorSubject<any> = new BehaviorSubject([]);
   
-  
   constructor(public route:Router) {
-      this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
+    this.supabase = createClient(environment.supabase.supabaseUrl, environment.supabase.supabaseKey, {
       });      
       this.supabase.auth.onAuthStateChange((event, session) => {
         console.log('event ', event);
@@ -129,7 +129,6 @@ export class LoginService {
           this._chat.next([...this._chat.value, newItem]);
         } else if (payload.eventType == 'UPDATE') {
           const updatedItem: Chat = payload.new;
-          
           const newValue = this._chat.value.map( (item: Chat) => {
             if (updatedItem.id == item.id) {
               item = updatedItem;
@@ -139,6 +138,7 @@ export class LoginService {
           this._chat.next(newValue);
         }
       }).subscribe();
+      // ()=>{this.elemento.scrollTop=this.elemento.scrollHeight }
     }
   }
   

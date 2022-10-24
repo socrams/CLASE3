@@ -1,17 +1,50 @@
-
-    <!-- <div class="row">
-        <div class="col-xs-6"> -->
-            <ng-container *ngFor="let chat of chats | async">
-                <div class="message my-message">
-                    <!-- *ngIf="chat.user != this.mailLocal"  -->
-                    <span>{{chat.message}}</span>
-                    <div class="time ion-text-right"><br>
-                        {{chat.created_at | date:'shortTime'}}
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+<app-menu></app-menu>
+<br>
+<h1>Chat</h1>
+<hr>
+<div class="container">
+        <div class="col-xs-12 col-md-12">
+        	<div class="panel panel-default">
+                <div class="panel-body msg_container_base" id="app-mensajes">
+                    <div><button (click)="altura()">leer</button></div>
+                    <div *ngFor="let chat of chats | async">
+                        <div class="row msg_container base_sent">
+                            <div class="col-md-10 col-xs-10">
+                                <div class=" text-end messages msg_sent" *ngIf="chat.user === this.mailLocal">
+                                    <p>{{chat.message}}</p>
+                                    <time>
+                                        {{chat.created_at | date:'shortTime'}}</time>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row msg_container base_receive">
+                            <div class="col-md-10 col-xs-10">
+                                <div class=" text-start messages msg_receive" *ngIf="chat.user != this.mailLocal">
+                                    <p>{{chat.message}}</p>
+                                    <time datetime="2009-11-13T20:00">{{chat.created_at | date:'shortTime'}}</time>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </ng-container>
-            
-            <label></label>
-            <input placeholder="mensaje" [(ngModel)]="message">
-        <button type="submit" (click)="enviarMessage()">Enviar</button>
-    
+
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input [(ngModel)]="message" id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="escribe tu mensaje" />
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary btn-sm"  placeholder="mensaje" (click)="enviarMessage()" id="btn-chat">Enviar</button>
+                        </span>
+                    </div>
+                </div>
+    		</div>
+        </div>
+</div>
+
+
+
+
+

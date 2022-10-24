@@ -17,7 +17,6 @@ import { AhorcadoComponent } from './ahorcado/ahorcado/ahorcado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CruzComponent } from './tictactoe/cruz/cruz.component';
 import { TableroComponent } from './tictactoe/tablero/tablero.component';
-import { CabezeraComponent } from './componentes/cabezera/cabezera.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PremiumComponent } from './premium/premium.component';
@@ -50,7 +49,6 @@ import { ChatComponent } from './componentes/chat/chat.component';
     AhorcadoComponent,
     CruzComponent,
     TableroComponent,
-    CabezeraComponent,
     PremiumComponent,
     ConectarComponent,
     TestComponent,
