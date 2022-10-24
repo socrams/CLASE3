@@ -16,6 +16,7 @@ import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { pathToFileURL } from 'url';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 
 // import { pathToFileURL } from 'url';
@@ -26,11 +27,11 @@ import { ChatComponent } from './componentes/chat/chat.component';
 const routes: Routes = [
 
   {path:'', component:BienvenidosComponent},
-  {path:'chat', component:ChatComponent},
-  {path:'conectar', component:ConectarComponent},
+  {path:'usuario', component:UsuarioComponent, canActivate:[LoginGuardGuard]},
+  {path:'chat', component:ChatComponent, canActivate:[LoginGuardGuard]},
+  // {path:'conectar', component:ConectarComponent},
   {path:'premium', component:PremiumComponent , canActivate:[LoginGuardGuard]},  
   {path: 'aboutme', component:AboutmeComponent},
-  {path: 'chat', component:ChatComponent},
   {path: 'listajuegos', component:ListaProductoComponent, canActivate:[LoginGuardGuard]},
   {path: 'ahorcado', component:AhorcadoComponent, canActivate:[LoginGuardGuard]},
   //{path:'login', loadChildren:()=> import ('./login/login.module').then (t=> t.LoginModule)},

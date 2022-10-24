@@ -48,7 +48,8 @@ export class ListaProductoComponent implements OnInit {
   }
 
   usuarioLogeado(){
-    return this.loginService.getEstaLogeado();
+    // return this.loginService.getEstaLogeado();
+    return this.loginService.getUsuarioLogeado();
   }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method

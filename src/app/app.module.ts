@@ -30,6 +30,7 @@ import { ConectarComponent } from './componentes/conectar/conectar.component';
 import { IonicModule } from '@ionic/angular';
 import { TestComponent } from './componentes/test/test.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ChatComponent } from './componentes/chat/chat.component';
     ConectarComponent,
     TestComponent,
     ChatComponent,
+    UsuarioComponent,
   ],
   imports: [
     ReactiveFormsModule,

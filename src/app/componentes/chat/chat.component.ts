@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {createClient, } from '@supabase/supabase-js';
 import { LoginService } from 'src/app/helper/login.service';
-import { environment } from 'src/environments/environment';
 
 export interface CurrentSession {
   currentSession: currentSession;
@@ -39,7 +37,7 @@ export class ChatComponent implements OnInit {
     this.elemento = await document.getElementById('app-mensajes')?.scrollTo();
   }
   async enviarMessage() {
-    const supabase = createClient(environment.supabaseUrl,environment.supabaseKey)
+    const supabase = this.supabaseService.supabase;
     const {data, error } = await  supabase
     .from('chat')
     .insert(
