@@ -26,6 +26,7 @@ import { ChatComponent } from './componentes/chat/chat.component';
 const routes: Routes = [
 
   {path:'', component:BienvenidosComponent},
+  {path:'chat', component:ChatComponent},
   {path:'conectar', component:ConectarComponent},
   {path:'premium', component:PremiumComponent , canActivate:[LoginGuardGuard]},  
   {path: 'aboutme', component:AboutmeComponent},
@@ -40,14 +41,7 @@ const routes: Routes = [
   {path: 'tictactoe', component:TableroComponent, canActivate:[PremiumGuard]},
   {path:'menu', component:MenuComponent},
   {path:'**', component:BienvenidosComponent},
-  
-
-
-
 ];
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

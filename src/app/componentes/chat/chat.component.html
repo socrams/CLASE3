@@ -1,28 +1,17 @@
-<app-menu></app-menu>
-<body>
-    <div id="wrapper">
-        <div id="menu">
-            <p class="welcome">
-                <i class='fa fa-commenting-o'></i>
-                <b>
 
-                </b>
-            </p>
-        </div>
-        <div id="chatbox">
-            <div class="Izquierda"></div>
-            <div class="derecha">
-                <tr *ngFor="let data of ArrayComentarios">
-                    <td>{{data}}</td>
-                </tr>
-            </div>
-
-        </div>
-
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg" [(ngModel)]='comentarios' autocomplete="off" />
-            <button ng (click)="insertarNew()" ng (click)="limpiar()" class="btn btn-primary">Enviar<i
-                    class='fa fa-send'></i></button>
-
-
-        </form>
+    <!-- <div class="row">
+        <div class="col-xs-6"> -->
+            <ng-container *ngFor="let chat of chats | async">
+                <div class="message my-message">
+                    <!-- *ngIf="chat.user != this.mailLocal"  -->
+                    <span>{{chat.message}}</span>
+                    <div class="time ion-text-right"><br>
+                        {{chat.created_at | date:'shortTime'}}
+                    </div>
+                </div>
+            </ng-container>
+            
+            <label></label>
+            <input placeholder="mensaje" [(ngModel)]="message">
+        <button type="submit" (click)="enviarMessage()">Enviar</button>
+    
